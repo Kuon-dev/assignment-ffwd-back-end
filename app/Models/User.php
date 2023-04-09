@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class User extends Authenticatable
 {
@@ -20,6 +22,8 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'phone_number',
+        'bio',
         'password',
     ];
 
@@ -41,4 +45,27 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+
+    //Relationships
+    // Forum
+    public function forum(): HasMany {
+        return $this->hasMany(Forum::class);
+    }
+
+    // Comment
+    public function comment(): HasMany {
+        return $this->hasMany(Comment::class);
+    }
+
+    // Quiz
+    public function quiz(): HasMany {
+        return $this->hasMany(Quiz::class);
+    }
+
+    // Feedback
+    public function feedback(): HasMany {
+        return $this->hasMany(Feedback::class);
+    }
 }
