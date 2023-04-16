@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Comment extends Model
+class Reply extends Model
 {
     use HasFactory;
 
@@ -21,18 +21,17 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     }
 
-    // public function forum(): BelongsTo
+    // public function comment(): BelongsTo
     // {
-    //     return $this->belongsTo(Forum::class);
+    //     return $this->belongsTo(Comment::class);
     // }
 
-    // Reply
-    // public function reply(): HasMany {
-    //     return $this->hasMany(Reply::class);
-    // }
-
-    public function reply(): BelongsTo
+    public function forum(): BelongsTo
     {
-        return $this->belongsTo(Reply::class);
+        return $this->belongsTo(Forum::class);
+    }
+
+    public function comment(): HasMany {
+        return $this->hasMany(Comment::class);
     }
 }
