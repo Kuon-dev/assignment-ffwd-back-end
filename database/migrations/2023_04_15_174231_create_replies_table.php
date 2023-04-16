@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('replies', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('forum_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            //$table->foreignId('comment_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignId('comment_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->text('message');
             $table->boolean('is_deleted_by_user');

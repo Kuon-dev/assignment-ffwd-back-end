@@ -21,18 +21,13 @@ class Comment extends Model
         return $this->belongsTo(User::class);
     }
 
-    // public function forum(): BelongsTo
-    // {
-    //     return $this->belongsTo(Forum::class);
-    // }
+    public function forum(): BelongsTo
+    {
+        return $this->belongsTo(Forum::class);
+    }
 
     // Reply
-    // public function reply(): HasMany {
-    //     return $this->hasMany(Reply::class);
-    // }
-
-    public function reply(): BelongsTo
-    {
-        return $this->belongsTo(Reply::class);
+    public function reply(): HasMany {
+        return $this->hasMany(Reply::class);
     }
 }

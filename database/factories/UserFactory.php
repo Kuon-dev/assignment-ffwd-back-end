@@ -17,7 +17,7 @@ class UserFactory extends Factory
      */
     public function definition(): array
     {
-        $isBanned = fake()->randomFloat(2, 0, 1) < 0.9;
+        $isBanned = fake()->randomFloat(2, 0, 1) < 0.95;
         return [
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
