@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ForumController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,19 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/user-all', [UserController::class, 'getAllUser']);
 });
 
+// Forum Index Page
+Route::get('/forums', [ForumController::class, 'index']);
+// Create Forum Page
+Route::post('/forums/create', [ForumController::class, 'create']);
+// Specific Forum Page
+Route::get('/forums/get', [ForumController::class, 'show']);
+// Edit Specific Forum Page
+Route::get('/forums/edit', [ForumController::class, 'edit']);
+// Delete Specific Forum Page
+Route::delete('/forums/delete', [ForumController::class, 'destroy']);
+// Create Comment Page
+Route::post('/forums/comments/create', [ForumController::class, 'createComment']);
+// Edit Specific Comment Page
+Route::post('/forums/comments/edit', [ForumController::class, 'editComment']);
+// Delete Specific Comment Page
+Route::post('/forums/comments/delete', [ForumController::class, 'destroyComment']);

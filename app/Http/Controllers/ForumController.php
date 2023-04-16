@@ -14,57 +14,55 @@ class ForumController extends Controller
     public function index() {
         $forums = Forum::latest()->get();
         
-        return view('forums.index', [
-            'forums' => $forums,
-        ]);
+        return response()->json(['data' => $forums]);
     }
 
     // get specific forum post with comments
-    public function show($forumID) {
+    public function show(Request $forumID) {
         $forum = Forum::findOrFail($forumID);
         $comments = Comment::findOrFail($forumID);
 
-        return view('forum.show', ['forum' => $forum, 'comments' => $comments]);
+        return response()->json(['data' => [$forum, $comments]]);
     }
 
     // create new forum
     public function create() {
-        return view('forum.create');
+        return response()->json(['message' => 'Your Forum Post has been Created.'], 200);
     }
 
     // edit forum
-    public function edit($forumID) {
+    public function edit(Request $forumID) {
         $forum = Forum::findOrFail($forumID);
 
-        return view('forum.edit', compact('forum'));
+        return response()->json(['message' => 'Forum Post Updated.'], 200);
     }
 
     // delete forum
-    public function destroy($forumID) {
+    public function destroy(Request $forumID) {
         $forum = Forum::findOrFail($forumID);
         $forum->delete();
 
-        // return redirect('someOtherPage');
+        return response()->json(['message' => 'Forum Post has been Deleted.'], 200);
     }
 
     //   COMMENT SECTION   //
     // create new comment
-    public function createComment($forumID) {
-
+    public function createComment(Request $forumID) {
+        return response()->json(['message' => 'Your Comment has been Created for Post ' + $forumID], 200);
     }
 
     // edit comment
-    public function editComment($commentID) {
+    public function editComment(Request $commentID) {
         $comment = Comment::findOrFail($commentID);
 
-        return view('comment.edit', compact('comment'));
+        return response()->json(['message' => 'Forum Post Updated.'], 200);
     }
 
     // delete comment
-    public function destroyComment($commentID) {
+    public function destroyComment(Request $commentID) {
         $comment = Comment::findOrFail($commentID);
         $comment->delete();
 
-        // return redirect('someOtherPage');
+        return response()->json(['message' => 'Comment has been Deleted.'], 200);
     }
 }
