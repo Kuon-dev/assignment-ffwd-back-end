@@ -17,7 +17,7 @@ class Forum extends Model
         'content',
     ];
 
-    public function user_id(): BelongsTo {
+    public function user(): BelongsTo {
         return $this->belongsTo(User::class);
     }
 
@@ -25,8 +25,13 @@ class Forum extends Model
     /**
      * Get the comments of forum.
      */
-    public function comment(): HasMany
+    // public function comment(): HasMany
+    // {
+    //     return $this->hasMany(Comment::class);
+    // }
+
+    public function reply(): HasMany
     {
-        return $this->hasMany(Comment::class);
+        return $this->hasMany(Reply::class);
     }
 }

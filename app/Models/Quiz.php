@@ -12,7 +12,7 @@ class Quiz extends Model
     use HasFactory;
 
     // Inverse
-    public function user_id(): BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
