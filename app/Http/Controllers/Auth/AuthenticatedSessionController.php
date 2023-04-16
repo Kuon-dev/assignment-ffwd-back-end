@@ -35,4 +35,29 @@ class AuthenticatedSessionController extends Controller
 
         return response()->noContent();
     }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $remember = $request->filled('remember');
+
+        if (Auth::attempt($request->only('email', 'password'), $remember)) {
+            $request->session()->regenerate();
+            $user = Auth::user();
+            $token = $user->createToken('MyAppToken')->plainTextToken;
+            $response = [
+                'user' => $user,
+                'token' => $token,
+            ];
+            return response($response)->withCookie(cookie('remember_token', $token, 1440));
+        }
+
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
+    }
 }

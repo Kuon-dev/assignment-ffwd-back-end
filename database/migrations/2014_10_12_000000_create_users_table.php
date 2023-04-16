@@ -20,7 +20,7 @@ return new class extends Migration
             $table->text('bio')->nullable();
             $table->string('password');
             $table->rememberToken();
-            $table->boolean('is_banned');
+            $table->boolean('is_banned')->default(false);
             $table->timestamps();
         });
     }
