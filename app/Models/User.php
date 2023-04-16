@@ -8,11 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, HasRoles;
 
     /**
      * The attributes that are mass assignable.
@@ -57,6 +57,11 @@ class User extends Authenticatable
     // Comment
     public function comment(): HasMany {
         return $this->hasMany(Comment::class);
+    }
+
+    // Reply  -- A Forum has Replies which have Comments
+    public function reply(): HasMany {
+        return $this->hasMany(Reply::class);
     }
 
     // Quiz

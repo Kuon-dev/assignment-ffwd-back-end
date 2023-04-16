@@ -14,12 +14,12 @@ class Feedback extends Model
         'message',
     ];
 
-    public function user_id(): BelongsTo
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function quiz_id(): BelongsTo
+    public function quiz(): BelongsTo
     {
         return $this->belongsTo(Quiz::class);
     }
