@@ -25,10 +25,10 @@ class Forum extends Model
     /**
      * Get the comments of forum.
      */
-    // public function comment(): HasMany
-    // {
-    //     return $this->hasMany(Comment::class);
-    // }
+    public function comment(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
 
     public function reply(): HasMany
     {
