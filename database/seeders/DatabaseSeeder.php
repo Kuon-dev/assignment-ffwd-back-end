@@ -8,6 +8,7 @@ use App\Models\Reply;
 use App\Models\Comment;
 use App\Models\Quiz;
 use App\Models\Feedback;
+use App\Models\Vote;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
@@ -93,6 +94,26 @@ class DatabaseSeeder extends Seeder
                 'user_id' => $user->id,
                 'quiz_id' => $quiz->id,
             ]);
+        }
+
+        // ==========================================
+        // |  Create vote
+        // | ----------------------------------------
+        $votes = [];
+        $unique_votes_count = 10000;
+        while (count($votes) < $unique_votes_count) {
+            $user = $users[array_rand($users)];
+            $forum = $forums[array_rand($forums)];
+            // Check if a vote record with the given user_id and forum_id already exists
+            $existing_vote = Vote::where('user_id', $user->id)
+                                ->where('forum_id', $forum->id)
+                                ->first();
+            if (!$existing_vote) {
+                $votes[] = Vote::factory()->create([
+                    'user_id' => $user->id,
+                    'forum_id' => $forum->id,
+                ]);
+            }
         }
     }
 }
