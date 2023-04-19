@@ -34,4 +34,9 @@ class Forum extends Model
     {
         return $this->hasMany(Reply::class);
     }
+
+    // Vote
+    public function vote(): HasMany {
+        return $this->hasMany(Vote::class);
+    }
 }
