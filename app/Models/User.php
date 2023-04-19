@@ -59,7 +59,7 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
-    // Reply  -- A Forum has Replies which have Comments
+    // Reply  -- A Forum has Comments which have Replies
     public function reply(): HasMany {
         return $this->hasMany(Reply::class);
     }
@@ -72,5 +72,10 @@ class User extends Authenticatable
     // Feedback
     public function feedback(): HasMany {
         return $this->hasMany(Feedback::class);
+    }
+
+    // Vote
+    public function vote(): HasMany {
+        return $this->hasMany(Vote::class);
     }
 }
