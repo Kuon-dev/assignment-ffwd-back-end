@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('quiz_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->text('message');
+            $table->unsignedTinyInteger('rating');
             $table->timestamps();
         });
     }
