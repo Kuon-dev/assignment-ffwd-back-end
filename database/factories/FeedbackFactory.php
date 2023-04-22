@@ -18,6 +18,7 @@ class FeedbackFactory extends Factory
     {
         return [
             'message' => fake()->sentence(),
+            'rating' => fake()->numberBetween(1, 5),
         ];
     }
 }

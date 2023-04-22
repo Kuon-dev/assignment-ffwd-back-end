@@ -12,6 +12,9 @@ class Feedback extends Model
 
     protected $fillable = [
         'message',
+        'rating',
+        'quiz_id',
+        'user_id', // remove both id's when finish website
     ];
 
     public function user(): BelongsTo
