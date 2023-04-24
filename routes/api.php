@@ -26,7 +26,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
 Route::get('/forums/pages/count', [ForumController::class, 'paginationCount']);
 
 // Forum Index Page
-Route::post('/forums/{id}', [ForumController::class, 'index']);
+Route::post('/forums/get/{id}', [ForumController::class, 'index']);
 
 
 // Create Forum Page
