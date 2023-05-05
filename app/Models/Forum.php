@@ -13,8 +13,11 @@ class Forum extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'title',
         'content',
+        'is_deleted_by_user',
+        'is_deleted_by_admin'
     ];
 
     public function user(): BelongsTo {

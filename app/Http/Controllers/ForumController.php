@@ -14,9 +14,14 @@ class ForumController extends Controller
 {
     //   FORUM SECTION   //
     // get forum posts
+    public function setOptionsAttribute($options)
+    {
+        $this->attributes['options'] = json_encode($options);
+    }
+
     public function index(Request $request) {
         $forums = Forum::latest()
-        ->skip($request->index * 10) 
+        ->skip($request->index * 10)
         ->take(10)
         ->get();
 
@@ -37,7 +42,7 @@ class ForumController extends Controller
             $downVote = Vote::where('forum_id', $forum->id)
             ->where('is_upvote', '=', 0)
             ->count();
-            
+
             $upVotes[] = $upVote;
             $downVotes[] = $downVote;
         }
@@ -60,13 +65,21 @@ class ForumController extends Controller
         $comments = Comment::findOrFail($forumID);
 
         return response()->json([
-            'forum' => $forum, 
+            'forum' => $forum,
             'comment' => $comments
         ]);
     }
 
     // create new forum
-    public function create() {
+    public function create(Request $request) {
+        Log::debug($request->content);
+        $newForum = Forum::create([
+            'user_id' => $request->user_id,
+            'title' => $request->title,
+            'content' => json_encode($request->content),
+            'is_deleted_by_user' => false,
+            'is_removed_by_admin' => false,
+        ]);
         return response()->json(['message' => 'Your Forum Post has been Created.'], 200);
     }
 
@@ -105,4 +118,5 @@ class ForumController extends Controller
 
         return response()->json(['message' => 'Comment has been Deleted.'], 200);
     }
+
 }

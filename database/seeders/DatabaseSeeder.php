@@ -35,6 +35,13 @@ class DatabaseSeeder extends Seeder
           $users[] = $defaultUser;
         }
 
+        $rootUser = User::factory()->create([
+          "name" => "Root",
+          "email" => "admin@example.com",
+        ]);
+
+        $rootUser->assignRole($rootPerms);
+
         // ==========================================
         // |  Create forums
         // | ----------------------------------------
