@@ -23,14 +23,14 @@ Route::get('/dashboard', function (Request $request) {
   if (is_null($request->user()))
     return response()-> json(["message" => "not yet log in", "route" => ""]);
 
-  if ($request->user()->hasRole('Root')){
+  if ($request->user()->hasRole('root')){
     return response()-> json(["message" => "already logged in", "route" => "/admin/"]);
   }
 
-  if ($request->user()->hasRole('Admin')){
+  if ($request->user()->hasRole('admin')){
     return response()-> json(["message" => "already logged in", "route" => "/admin/"]);
   }
-  if ($request->user()->hasRole('Default')){
+  if ($request->user()->hasRole('user')){
     return response()-> json(["message" => "already logged in", "route" => "/user/"]);
   }
   else
