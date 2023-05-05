@@ -15,9 +15,9 @@ class UserController extends Controller
     // check user permission
 
   public function checkPerms(Request $request) {
-    $root = $request->user()->hasRole("Root");
-    $admin = $request->user()->hasRole("Admin");
-    $default = $request->user()->hasRole("Default");
+    $root = $request->user()->hasRole("root");
+    $admin = $request->user()->hasRole("admin");
+    $default = $request->user()->hasRole("user");
 
     if ($root) {
       return response()->json(["perm_level" => 3]);
