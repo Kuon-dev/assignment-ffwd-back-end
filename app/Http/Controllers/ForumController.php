@@ -14,11 +14,6 @@ class ForumController extends Controller
 {
     //   FORUM SECTION   //
     // get forum posts
-    public function setOptionsAttribute($options)
-    {
-        $this->attributes['options'] = json_encode($options);
-    }
-
     public function index(Request $request) {
         $forums = Forum::latest()
         ->skip($request->index * 10)
@@ -60,13 +55,24 @@ class ForumController extends Controller
     }
 
     // get specific forum post with comments
-    public function show(Request $forumID) {
-        $forum = Forum::findOrFail($forumID);
-        $comments = Comment::findOrFail($forumID);
+    public function show(Request $request) {
+        $forum = Forum::where('id', $request->forum_id)->get();
+        $comments = Comment::where('forum_id', $request->forum_id)->get();
+        $user = User::where('id', $forum[0]->user_id)->get()[0];
+        $upVote = Vote::where('forum_id', $request->forum_id)
+        ->where('is_upvote', '=', 1)
+        ->count();
+
+        $downVote = Vote::where('forum_id', $request->forum_id)
+        ->where('is_upvote', '=', 0)
+        ->count();
+
 
         return response()->json([
-            'forum' => $forum,
-            'comment' => $comments
+            'forum' => $forum[0],
+            'comment' => $comments,
+            'votes' => $upVote - $downVote,
+            'user' => $user,
         ]);
     }
 
@@ -84,15 +90,15 @@ class ForumController extends Controller
     }
 
     // edit forum
-    public function edit(Request $forumID) {
-        $forum = Forum::findOrFail($forumID);
+    public function edit(Request $forum_id) {
+        $forum = Forum::findOrFail($forum_id);
 
         return response()->json(['message' => 'Forum Post Updated.'], 200);
     }
 
     // delete forum
-    public function destroy(Request $forumID) {
-        $forum = Forum::findOrFail($forumID);
+    public function destroy(Request $forum_id) {
+        $forum = Forum::findOrFail($forum_id);
         $forum->delete();
 
         return response()->json(['message' => 'Forum Post has been Deleted.'], 200);
@@ -100,8 +106,8 @@ class ForumController extends Controller
 
     //   COMMENT SECTION   //
     // create new comment
-    public function createComment(Request $forumID) {
-        return response()->json(['message' => 'Your Comment has been Created for Post ' + $forumID], 200);
+    public function createComment(Request $forum_id) {
+        return response()->json(['message' => 'Your Comment has been Created for Post ' + $forum_id], 200);
     }
 
     // edit comment

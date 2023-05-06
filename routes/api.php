@@ -32,7 +32,7 @@ Route::post('/forums/get/{id}', [ForumController::class, 'index']);
 // Create Forum Page
 Route::post('/forums/create', [ForumController::class, 'create']);
 // Specific Forum Page
-Route::get('/forums/get', [ForumController::class, 'show']);
+Route::post('/forums/get/specific/{id}', [ForumController::class, 'show']);
 // Edit Specific Forum Page
 Route::get('/forums/edit', [ForumController::class, 'edit']);
 // Delete Specific Forum Page
@@ -44,6 +44,9 @@ Route::post('/forums/comments/edit', [ForumController::class, 'editComment']);
 // Delete Specific Comment Page
 Route::post('/forums/comments/delete', [ForumController::class, 'destroyComment']);
 
+// Test
+Route::post('/comments/get', [CommentController::class, 'index']);
+Route::delete('/comments/delete/{id}', [CommentController::class, 'deletedByUser']);
 
 Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/feeback/create', [FeedbackController::class, 'store']);
