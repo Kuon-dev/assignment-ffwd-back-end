@@ -21,14 +21,14 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/user', [UserController::class, 'index']);
     Route::post('/user', [UserController::class, 'checkPerms']);
     Route::post('/user-all', [UserController::class, 'getAllUser']);
+    Route::post('/user/update', [UserController::class, 'update']);
 });
+
+//   FORUM    //
 // Forum Pagination
 Route::get('/forums/pages/count', [ForumController::class, 'paginationCount']);
-
 // Forum Index Page
 Route::post('/forums/get/{id}', [ForumController::class, 'index']);
-
-
 // Create Forum Page
 Route::post('/forums/create', [ForumController::class, 'create']);
 // Specific Forum Page
