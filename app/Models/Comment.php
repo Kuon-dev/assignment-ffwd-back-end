@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Comment extends Model {
   use HasFactory;
 
-  protected $fillable = ["message"];
+  protected $fillable = ["message", "forum_id", "user_id"];
 
   // Inverse
   public function user(): BelongsTo {

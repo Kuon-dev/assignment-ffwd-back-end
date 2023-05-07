@@ -37,12 +37,12 @@ class UserController extends Controller {
 
   public function rules() {
     $rules = [
-      'id' => 'required|numeric',
-      'name' => 'required',
-      'email' => 'required|email',
-      'phone' => 'required',
-      'password' => 'required',
-      'bio' => 'required',
+      "id" => "required|numeric",
+      "name" => "required",
+      "email" => "required|email",
+      "phone" => "required",
+      "password" => "required",
+      "bio" => "required",
     ];
 
     return $rules;
@@ -50,7 +50,7 @@ class UserController extends Controller {
 
   public function update(Request $request) {
     $updateUser = User::find($request->id);
-    
+
     $updateUser->name = $request->newName;
     $updateUser->email = $request->newEmail;
     $updateUser->phone_number = $request->newPhone;
@@ -58,6 +58,9 @@ class UserController extends Controller {
 
     $updateUser->save();
 
-    return response()->json(['message' => 'Your Profile has been Updated.'], 200);
+    return response()->json(
+      ["message" => "Your Profile has been Updated."],
+      200
+    );
   }
 }
