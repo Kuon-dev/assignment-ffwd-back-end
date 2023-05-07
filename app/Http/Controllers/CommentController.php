@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;
 class CommentController extends Controller {
   // get all comments of a specific forum (forum_id)
   public function index(Request $request) {
-    $forumID = $request->forumId;
+    $forumID = $request->forum;
     $comments = Comment::where("forum_id", $forumID)
       ->latest()
       ->skip($request->index * 10)

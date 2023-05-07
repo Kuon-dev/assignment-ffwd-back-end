@@ -3,6 +3,7 @@
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CommentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -45,7 +46,7 @@ Route::post('/forums/comments/edit', [ForumController::class, 'editComment']);
 Route::post('/forums/comments/delete', [ForumController::class, 'destroyComment']);
 
 // Test
-Route::post('/comments/get', [CommentController::class, 'index']);
+Route::post('/comments/get/{id}', [CommentController::class, 'index']);
 Route::delete('/comments/delete/{id}', [CommentController::class, 'deletedByUser']);
 Route::get('/forums/get/hot', [ForumController::class, 'showHotToday']);
 
