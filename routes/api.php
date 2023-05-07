@@ -47,6 +47,7 @@ Route::post('/forums/comments/delete', [ForumController::class, 'destroyComment'
 // Test
 Route::post('/comments/get', [CommentController::class, 'index']);
 Route::delete('/comments/delete/{id}', [CommentController::class, 'deletedByUser']);
+Route::get('/forums/get/hot', [ForumController::class, 'showHotToday']);
 
 Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/feeback/create', [FeedbackController::class, 'store']);
