@@ -55,7 +55,6 @@ class CommentController extends Controller {
     return response()->json(["message" => "Comment has been added."], 200);
   }
 
-
   // Update comment
   public function edit(Request $request) {
     $updateComment = Comment::find($request->comment);
@@ -63,7 +62,10 @@ class CommentController extends Controller {
     $updateComment->message = $request->message;
     $updateComment->save();
 
-    return response()->json(["message" => "Your Comment has been Updated."], 200);
+    return response()->json(
+      ["message" => "Your Comment has been Updated."],
+      200
+    );
   }
 
   // Delete comment function for user
