@@ -39,19 +39,22 @@ Route::get('/forums/edit', [ForumController::class, 'edit']);
 // Delete Specific Forum Page
 Route::delete('/forums/delete', [ForumController::class, 'destroy']);
 // Create Comment Page
-Route::post('/forums/comments/create', [ForumController::class, 'createComment']);
-// Edit Specific Comment Page
-Route::post('/forums/comments/edit', [ForumController::class, 'editComment']);
-// Delete Specific Comment Page
-Route::post('/forums/comments/delete', [ForumController::class, 'destroyComment']);
+// Route::post('/forums/comments/create', [ForumController::class, 'createComment']);
+// // Edit Specific Comment Page
+// Route::post('/forums/comments/edit', [ForumController::class, 'editComment']);
+// // Delete Specific Comment Page
+// Route::post('/forums/comments/delete', [ForumController::class, 'destroyComment']);
 
 // Test
 Route::post('/comments/get/{id}', [CommentController::class, 'index']);
+Route::post('/comments/create', [CommentController::class, 'store']);
+Route::post('/comments/edit', [CommentController::class, 'edit']);
 Route::delete('/comments/delete/{id}', [CommentController::class, 'deletedByUser']);
 Route::get('/forums/get/hot', [ForumController::class, 'showHotToday']);
 
 Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/feeback/create', [FeedbackController::class, 'store']);
+    // Route::post('/comments/create', [CommentController::class, 'store']);
     // Route::post('/user', [FeedbackController::class, 'checkPerms']);
     // Route::post('/user-all', [FeedbackController::class, 'getAllUser']);
 });

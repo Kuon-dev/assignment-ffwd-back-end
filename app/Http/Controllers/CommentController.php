@@ -20,6 +20,8 @@ class CommentController extends Controller {
       ->skip($request->index * 10)
       ->take(10)
       ->get();
+
+    $commentsCount = Comment::where("forum_id", $forumID)->count();
     //$comments = Comment::latest()->get(); // Get ALL comments
     $userNames = [];
 
@@ -30,19 +32,22 @@ class CommentController extends Controller {
       }
     }
 
-    return response()->json(["data" => $comments, "users" => $userNames]);
+    return response()->json([
+      "data" => $comments,
+      "users" => $userNames,
+      "comments_count" => $commentsCount,
+    ]);
   }
 
   // Create and Store new comment
   public function store(Request $request) {
+    Log::debug($request->forum);
     $request->validate([
       "message" => ["required", "string", "max:1000"],
     ]);
 
-    $forum = Forum::latest()->first(); // Change this to the forum that the user is commenting on
     $comment = Comment::create([
-      //'forum_id' => $request->forumId, // Change to this if $request has forum_id
-      "forum_id" => $forum->id,
+      "forum_id" => $request->forum,
       "user_id" => $request->user,
       "message" => $request->message,
     ]);
@@ -50,8 +55,20 @@ class CommentController extends Controller {
     return response()->json(["message" => "Comment has been added."], 200);
   }
 
-  // edit comment
-  public function edit(Request $request, $commentID) {
+
+  // Update comment - replacing edit function
+  public function edit(Request $request) {
+    $updateComment = Comment::find($request->comment);
+
+    $updateComment->message = $request->message;
+    $updateComment->save();
+
+    return response()->json(["message" => "Your Comment has been Updated."], 200);
+  }
+
+
+  // edit comment - old code
+  public function editLegacy(Request $request, $commentID) {
     $comment = Comment::findOrFail($commentID);
 
     $request->validate([
@@ -66,7 +83,7 @@ class CommentController extends Controller {
     // Possible reference - reset password in NewPasswordController.php
   }
 
-  // delete comment for user
+  // delete comment function for user
   //public function deleteByUser(Request $request, $commentID) {
   public function deletedByUser(Request $commentID) {
     $comment = Comment::findOrFail($commentID);
@@ -79,7 +96,7 @@ class CommentController extends Controller {
     return response()->json(["message" => "Comment has been Deleted."], 200);
   }
 
-  // delete comment for admin
+  // delete comment function for admin
   //public function deleteByAdmin(Request $request, $commentID) {
   public function deletedByAdmin(Request $commentID) {
     $comment = Comment::findOrFail($commentID);

@@ -16,8 +16,8 @@ return new class extends Migration
             $table->foreignId('forum_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->text('message');
-            $table->boolean('is_deleted_by_user');
-            $table->boolean('is_removed_by_admin');
+            $table->boolean('is_deleted_by_user')->default(false);
+            $table->boolean('is_removed_by_admin')->default(false);
             $table->timestamps();
         });
     }
