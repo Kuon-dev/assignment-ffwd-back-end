@@ -30,31 +30,29 @@ Route::middleware(['auth:sanctum'])->group(function(){
 Route::get('/forums/pages/count', [ForumController::class, 'paginationCount']);
 // Forum Index Page
 Route::post('/forums/get/{id}', [ForumController::class, 'index']);
-// Create Forum Page
-Route::post('/forums/create', [ForumController::class, 'create']);
 // Specific Forum Page
 Route::post('/forums/get/specific/{id}', [ForumController::class, 'show']);
-// Edit Specific Forum Page
-Route::get('/forums/edit', [ForumController::class, 'edit']);
-// Delete Specific Forum Page
-Route::delete('/forums/delete', [ForumController::class, 'destroy']);
-// Create Comment Page
-// Route::post('/forums/comments/create', [ForumController::class, 'createComment']);
-// // Edit Specific Comment Page
-// Route::post('/forums/comments/edit', [ForumController::class, 'editComment']);
-// // Delete Specific Comment Page
-// Route::post('/forums/comments/delete', [ForumController::class, 'destroyComment']);
-
-// Test
+// Get all comments of specific forum
 Route::post('/comments/get/{id}', [CommentController::class, 'index']);
-Route::post('/comments/create', [CommentController::class, 'store']);
-Route::post('/comments/edit', [CommentController::class, 'edit']);
-Route::delete('/comments/delete/{id}', [CommentController::class, 'deletedByUser']);
 Route::get('/forums/get/hot', [ForumController::class, 'showHotToday']);
 
 Route::middleware(['auth:sanctum'])->group(function(){
+    // Create Forum Page
+    Route::post('/forums/create', [ForumController::class, 'create']);
+    // Edit Specific Forum Page
+    Route::get('/forums/edit', [ForumController::class, 'edit']);
+    // Delete Specific Forum Page
+    Route::delete('/forums/delete', [ForumController::class, 'destroy']);
+    // Create New Comment
+    Route::post('/comments/create', [CommentController::class, 'store']);
+    // Edit Exisitng Comment
+    Route::post('/comments/edit', [CommentController::class, 'edit']);
+    // Set is_removed_by_admin to 1 (Available for admin only)
+    Route::post('/comments/deleteAdmin', [CommentController::class, 'deletedByAdmin']);
+    // Set is_deleted_by_user to 1
+    Route::post('/comments/deleteUser', [CommentController::class, 'deletedByUser']);
+    // Create feedback
     Route::post('/feeback/create', [FeedbackController::class, 'store']);
-    // Route::post('/comments/create', [CommentController::class, 'store']);
     // Route::post('/user', [FeedbackController::class, 'checkPerms']);
     // Route::post('/user-all', [FeedbackController::class, 'getAllUser']);
 });

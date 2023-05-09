@@ -55,57 +55,38 @@ class CommentController extends Controller {
     return response()->json(["message" => "Comment has been added."], 200);
   }
 
-
-  // Update comment - replacing edit function
+  // Update comment
   public function edit(Request $request) {
     $updateComment = Comment::find($request->comment);
 
     $updateComment->message = $request->message;
     $updateComment->save();
 
-    return response()->json(["message" => "Your Comment has been Updated."], 200);
+    return response()->json(
+      ["message" => "Your Comment has been Updated."],
+      200
+    );
   }
 
-
-  // edit comment - old code
-  public function editLegacy(Request $request, $commentID) {
-    $comment = Comment::findOrFail($commentID);
-
-    $request->validate([
-      "message" => ["required", "string", "max:1000"],
-    ]);
-
-    $comment->message = $request->input("message"); // Unsure correct or not
-    $comment->save();
-
-    return response()->json(["message" => "Comment has been Modified."], 200);
-
-    // Possible reference - reset password in NewPasswordController.php
-  }
-
-  // delete comment function for user
-  //public function deleteByUser(Request $request, $commentID) {
-  public function deletedByUser(Request $commentID) {
-    $comment = Comment::findOrFail($commentID);
+  // Delete comment function for user
+  public function deletedByUser(Request $request) {
+    $deletedComment = Comment::find($request->comment);
 
     // Set the is_deleted_by_user flag to 1 in comment table
-    $comment->is_deleted_by_user = 1;
-    $comment->save();
-    //$comment->delete(); // Instead of deleting record, use code to set is_deleted_by_user to 1
+    $deletedComment->is_deleted_by_user = 1;
+    $deletedComment->save();
 
     return response()->json(["message" => "Comment has been Deleted."], 200);
   }
 
-  // delete comment function for admin
-  //public function deleteByAdmin(Request $request, $commentID) {
-  public function deletedByAdmin(Request $commentID) {
-    $comment = Comment::findOrFail($commentID);
+  // Delete comment function for admin
+  public function deletedByAdmin(Request $request) {
+    $deletedComment = Comment::find($request->comment);
 
     // Set the is_removed_by_admin flag to 1 in comment table
-    $comment->is_removed_by_admin = 1;
-    $comment->save();
-    //$comment->delete(); // Instead of deleting record entirely, use code to set is_removed_by_admin to 1
+    $deletedComment->is_removed_by_admin = 1;
+    $deletedComment->save();
 
-    return response()->json(["message" => "Comment has been Deleted."], 200);
+    return response()->json(["message" => "Comment has been Removed."], 200);
   }
 }
