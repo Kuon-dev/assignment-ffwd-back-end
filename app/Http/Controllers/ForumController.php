@@ -129,7 +129,7 @@ class ForumController extends Controller {
   public function edit(Request $request) {
     $forum = Forum::find($request->forum);
     $forum->content = $request->content;
-    $forum->title= $request->title;
+    $forum->title = $request->title;
     $forum->save();
 
     return response()->json(["message" => "Forum Post Updated."], 200);
