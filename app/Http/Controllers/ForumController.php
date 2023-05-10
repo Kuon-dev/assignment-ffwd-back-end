@@ -89,14 +89,26 @@ class ForumController extends Controller {
       ->limit(10)
       ->get();
 
-    Log::debug($hotTodayForums);
+    if ($hotTodayForums->isEmpty()) {
+      Log::debug("is empty array");
+      $hotForums = Forum::where("is_deleted_by_user", 0)
+        ->where("is_removed_by_admin", 0)
+        ->withCount([
+          "votes as upvotes_count" => function ($query) {
+            $query->where("is_upvote", 1);
+          },
+        ])
+        ->orderByDesc("upvotes_count")
+        ->limit(10)
+        ->get();
+      return response()->json(["data" => $hotForums, "additional" => "No today"], 200);
+    }
 
     return response()->json(["data" => $hotTodayForums], 200);
   }
 
   // create new forum
   public function create(Request $request) {
-    Log::debug($request->content);
     $newForum = Forum::create([
       "user_id" => $request->user_id,
       "title" => $request->title,
@@ -148,4 +160,17 @@ class ForumController extends Controller {
 
     return response()->json(["message" => "Comment has been Deleted."], 200);
   }
+
+  public function addVote(Request $request){
+    Vote::create([
+      "forum_id" => $request->forum,
+      "user_id" => $request->user()->id,
+      "is_upvote"=> $request->vote
+    ]);
+    return response()->noContent();
+  }
+
+  public function deleteVote(){
+  }
+
 }

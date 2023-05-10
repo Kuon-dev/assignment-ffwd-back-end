@@ -55,7 +55,6 @@ class CommentController extends Controller {
     return response()->json(["message" => "Comment has been added."], 200);
   }
 
-  // Update comment
   public function edit(Request $request) {
     $updateComment = Comment::find($request->comment);
 
@@ -66,6 +65,22 @@ class CommentController extends Controller {
       ["message" => "Your Comment has been Updated."],
       200
     );
+  }
+
+  // edit comment - old code
+  public function editLegacy(Request $request, $commentID) {
+    $comment = Comment::findOrFail($commentID);
+
+    $request->validate([
+      "message" => ["required", "string", "max:1000"],
+    ]);
+
+    $comment->message = $request->input("message"); // Unsure correct or not
+    $comment->save();
+
+    return response()->json(["message" => "Comment has been Modified."], 200);
+
+    // Possible reference - reset password in NewPasswordController.php
   }
 
   // Delete comment function for user
