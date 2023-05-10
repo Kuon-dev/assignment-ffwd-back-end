@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\CommentUpdated;
+use Illuminate\Support\Facades\Event;
 use App\Http\Controllers\Controller;
 use App\Models\Comment;
 use App\Models\Forum;
@@ -51,6 +53,7 @@ class CommentController extends Controller {
       "user_id" => $request->user,
       "message" => $request->message,
     ]);
+    event(new CommentUpdated($request->forum, $comment, $request->user()));
 
     return response()->json(["message" => "Comment has been added."], 200);
   }
