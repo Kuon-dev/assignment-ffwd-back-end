@@ -101,7 +101,10 @@ class ForumController extends Controller {
         ->orderByDesc("upvotes_count")
         ->limit(10)
         ->get();
-      return response()->json(["data" => $hotForums, "additional" => "No today"], 200);
+      return response()->json(
+        ["data" => $hotForums, "additional" => "No today"],
+        200
+      );
     }
 
     return response()->json(["data" => $hotTodayForums], 200);
@@ -161,25 +164,29 @@ class ForumController extends Controller {
     return response()->json(["message" => "Comment has been Deleted."], 200);
   }
 
-  public function addVote(Request $request){
-    $vote = Vote::where('forum_id', $request->forum)->where('user_id', $request->user()->id)->get();
-    if ($vote->isEmpty()){
+  public function addVote(Request $request) {
+    $vote = Vote::where("forum_id", $request->forum)
+      ->where("user_id", $request->user()->id)
+      ->get();
+    if ($vote->isEmpty()) {
       Vote::create([
         "forum_id" => $request->forum,
         "user_id" => $request->user()->id,
-        "is_upvote"=> $request->vote
+        "is_upvote" => $request->vote,
       ]);
       return response()->noContent();
+    } else {
+      $vote[0]->delete();
     }
-    else $vote[0]->delete();
   }
 
-  public function getVote(Request $request){
-    $vote = Vote::where('forum_id', $request->forum)->where('user_id', $request->user()->id)->get();
+  public function getVote(Request $request) {
+    $vote = Vote::where("forum_id", $request->forum)
+      ->where("user_id", $request->user()->id)
+      ->get();
     return response()->json(["data" => $vote], 200);
   }
 
-  public function deleteVote(){
+  public function deleteVote() {
   }
-
 }

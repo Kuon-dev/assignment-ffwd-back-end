@@ -9,11 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Vote extends Model {
   use HasFactory;
 
-  protected $fillable = [
-    "user_id",
-    "forum_id",
-    "is_upvote"
-  ];
+  protected $fillable = ["user_id", "forum_id", "is_upvote"];
 
   public function user(): BelongsTo {
     return $this->belongsTo(User::class);
