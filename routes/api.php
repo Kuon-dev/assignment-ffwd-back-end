@@ -40,7 +40,11 @@ Route::middleware(['auth:sanctum'])->group(function(){
     // Create Forum Page
     Route::post('/forums/create', [ForumController::class, 'create']);
     // Edit Specific Forum Page
-    Route::get('/forums/edit', [ForumController::class, 'edit']);
+    Route::post('/forums/edit', [ForumController::class, 'edit']);
+
+    Route::post('/forums/vote/add', [ForumController::class, 'addVote']);
+    Route::post('/forums/vote/get', [ForumController::class, 'getVote']);
+    Route::post('/forums/vote/delete', [ForumController::class, 'deleteVote']);
     // Delete Specific Forum Page
     Route::delete('/forums/delete', [ForumController::class, 'destroy']);
     // Create New Comment

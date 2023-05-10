@@ -162,12 +162,21 @@ class ForumController extends Controller {
   }
 
   public function addVote(Request $request){
-    Vote::create([
-      "forum_id" => $request->forum,
-      "user_id" => $request->user()->id,
-      "is_upvote"=> $request->vote
-    ]);
-    return response()->noContent();
+    $vote = Vote::where('forum_id', $request->forum)->where('user_id', $request->user()->id)->get();
+    if ($vote->isEmpty()){
+      Vote::create([
+        "forum_id" => $request->forum,
+        "user_id" => $request->user()->id,
+        "is_upvote"=> $request->vote
+      ]);
+      return response()->noContent();
+    }
+    else $vote[0]->delete();
+  }
+
+  public function getVote(Request $request){
+    $vote = Vote::where('forum_id', $request->forum)->where('user_id', $request->user()->id)->get();
+    return response()->json(["data" => $vote], 200);
   }
 
   public function deleteVote(){
