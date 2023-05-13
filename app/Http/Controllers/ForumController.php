@@ -135,36 +135,26 @@ class ForumController extends Controller {
     return response()->json(["message" => "Forum Post Updated."], 200);
   }
 
-  // delete forum
-  public function destroy(Request $forum_id) {
-    $forum = Forum::findOrFail($forum_id);
-    $forum->delete();
+  // Delete forum function for user
+  public function deletedByUser(Request $request) {
+    $deletedForum = Forum::find($request->forum);
 
-    return response()->json(["message" => "Forum Post has been Deleted."], 200);
+    // Set the is_deleted_by_user flag to 1 in forum table
+    $deletedForum->is_deleted_by_user = 1;
+    $deletedForum->save();
+
+    return response()->json(["message" => "Forum has been Deleted."], 200);
   }
 
-  //   COMMENT SECTION   //
-  // create new comment
-  public function createComment(Request $forum_id) {
-    return response()->json(
-      ["message" => "Your Comment has been Created for Post " + $forum_id],
-      200
-    );
-  }
+  // Delete forum function for admin
+  public function deletedByAdmin(Request $request) {
+    $deletedForum = Forum::find($request->forum);
 
-  // edit comment
-  public function editComment(Request $commentID) {
-    $comment = Comment::findOrFail($commentID);
+    // Set the is_removed_by_admin flag to 1 in forum table
+    $deletedForum->is_removed_by_admin = 1;
+    $deletedForum->save();
 
-    return response()->json(["message" => "Forum Post Updated."], 200);
-  }
-
-  // delete comment
-  public function destroyComment(Request $commentID) {
-    $comment = Comment::findOrFail($commentID);
-    $comment->delete();
-
-    return response()->json(["message" => "Comment has been Deleted."], 200);
+    return response()->json(["message" => "Forum has been Removed."], 200);
   }
 
   public function addVote(Request $request) {
