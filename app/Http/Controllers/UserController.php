@@ -11,14 +11,13 @@ use Symfony\Component\Console\Input\Input;
 
 use function Psy\debug;
 
-class UserController extends Controller
-{
-    // get specific user
-    public function index(Request $request) {
-        return $request->user();
-    }
+class UserController extends Controller {
+  // get specific user
+  public function index(Request $request) {
+    return $request->user();
+  }
 
-    // check user permission
+  // check user permission
 
   public function checkPerms(Request $request) {
     $root = $request->user()->hasRole("root");
@@ -38,12 +37,12 @@ class UserController extends Controller
 
   public function rules() {
     $rules = [
-      'id' => 'required|numeric',
-      'name' => 'required',
-      'email' => 'required|email',
-      'phone' => 'required',
-      'password' => 'required',
-      'bio' => 'required',
+      "id" => "required|numeric",
+      "name" => "required",
+      "email" => "required|email",
+      "phone" => "required",
+      "password" => "required",
+      "bio" => "required",
     ];
 
     return $rules;
@@ -51,7 +50,7 @@ class UserController extends Controller
 
   public function update(Request $request) {
     $updateUser = User::find($request->id);
-    
+
     $updateUser->name = $request->newName;
     $updateUser->email = $request->newEmail;
     $updateUser->phone_number = $request->newPhone;
@@ -59,6 +58,9 @@ class UserController extends Controller
 
     $updateUser->save();
 
-    return response()->json(['message' => 'Your Profile has been Updated.'], 200);
+    return response()->json(
+      ["message" => "Your Profile has been Updated."],
+      200
+    );
   }
 }

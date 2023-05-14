@@ -7,27 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Comment extends Model
-{
-    use HasFactory;
+class Comment extends Model {
+  use HasFactory;
 
-    protected $fillable = [
-        'message',
-    ];
+  protected $fillable = ["message", "forum_id", "user_id"];
 
-    // Inverse
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+  // Inverse
+  public function user(): BelongsTo {
+    return $this->belongsTo(User::class);
+  }
 
-    public function forum(): BelongsTo
-    {
-        return $this->belongsTo(Forum::class);
-    }
+  public function forum(): BelongsTo {
+    return $this->belongsTo(Forum::class);
+  }
 
-    // Reply
-    public function reply(): HasMany {
-        return $this->hasMany(Reply::class);
-    }
+  // Reply
+  public function reply(): HasMany {
+    return $this->hasMany(Reply::class);
+  }
 }

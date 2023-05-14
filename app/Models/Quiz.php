@@ -7,17 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
-class Quiz extends Model
-{
-    use HasFactory;
+class Quiz extends Model {
+  use HasFactory;
 
-    // Inverse
-    public function user(): BelongsTo
-    {
-        return $this->belongsTo(User::class);
-    }
+  // Inverse
+  public function user(): BelongsTo {
+    return $this->belongsTo(User::class);
+  }
 
-    public function feedback(): HasOne {
-        return $this->hasOne(Feedback::class);
-    }
+  public function feedback(): HasOne {
+    return $this->hasOne(Feedback::class);
+  }
 }
