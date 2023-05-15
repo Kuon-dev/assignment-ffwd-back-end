@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Quiz extends Model {
+  protected $fillable = [
+    'title',
+    'user_id',
+    'score',
+    'attempted_date',
+    'completed_time',
+];
+
   use HasFactory;
 
   // Inverse

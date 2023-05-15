@@ -4,6 +4,7 @@ use App\Http\Controllers\ForumController;
 use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\QuizController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -45,18 +46,23 @@ Route::middleware(['auth:sanctum'])->group(function(){
 
     Route::post('/forums/vote/add', [ForumController::class, 'addVote']);
     Route::post('/forums/vote/delete', [ForumController::class, 'deleteVote']);
+    // Delete Specific Forum Page By Admin
+    Route::post('/forums/deleteAdmin', [ForumController::class, 'deletedByAdmin']);
     // Delete Specific Forum Page
-    Route::delete('/forums/delete', [ForumController::class, 'destroy']);
+    Route::post('/forums/deleteUser', [ForumController::class, 'deletedByUser']);
     // Create New Comment
     Route::post('/comments/create', [CommentController::class, 'store']);
     // Edit Exisitng Comment
     Route::post('/comments/edit', [CommentController::class, 'edit']);
-    // Set is_removed_by_admin to 1 (Available for admin only)
+    // Delete Comment By Admin - Set is_removed_by_admin to 1 (Available for admin only)
     Route::post('/comments/deleteAdmin', [CommentController::class, 'deletedByAdmin']);
-    // Set is_deleted_by_user to 1
+    // Delete Comment By User - Set is_deleted_by_user to 1
     Route::post('/comments/deleteUser', [CommentController::class, 'deletedByUser']);
+    Route::post('/quizzes/get/{id}', [QuizController::class, 'index']);
+    Route::post('/score/{id}', [QuizController::class, 'getScore']);
     // Create feedback
     Route::post('/feeback/create', [FeedbackController::class, 'store']);
-    // Route::post('/user', [FeedbackController::class, 'checkPerms']);
     // Route::post('/user-all', [FeedbackController::class, 'getAllUser']);
+    // Create Quiz Score
+    Route::post('/quiz/create', [QuizController::class, 'create']);
 });
