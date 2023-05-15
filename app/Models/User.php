@@ -39,31 +39,33 @@ class User extends Authenticatable {
   //Relationships
   // Forum
   public function forum(): HasMany {
-    return $this->hasMany(Forum::class);
+    return $this->hasMany(Forum::class, 'id', 'forum_id');
   }
 
   // Comment
   public function comment(): HasMany {
-    return $this->hasMany(Comment::class);
+    return $this->hasMany(Comment::class, 'id', 'comment_id');
   }
 
   // Reply  -- A Forum has Comments which have Replies
+  /*
   public function reply(): HasMany {
     return $this->hasMany(Reply::class);
   }
+  */
 
   // Quiz
   public function quiz(): HasMany {
-    return $this->hasMany(Quiz::class);
+    return $this->hasMany(Quiz::class, 'id', 'quiz_id');
   }
 
   // Feedback
   public function feedback(): HasMany {
-    return $this->hasMany(Feedback::class);
+    return $this->hasMany(Feedback::class, 'id', 'feedback_id');
   }
 
   // Vote
   public function vote(): HasMany {
-    return $this->hasMany(Vote::class);
+    return $this->hasMany(Vote::class, 'id', 'vote_id');
   }
 }

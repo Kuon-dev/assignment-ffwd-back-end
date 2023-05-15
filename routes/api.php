@@ -35,6 +35,7 @@ Route::post('/forums/get/specific/{id}', [ForumController::class, 'show']);
 // Get all comments of specific forum
 Route::post('/comments/get/{id}', [CommentController::class, 'index']);
 Route::get('/forums/get/hot', [ForumController::class, 'showHotToday']);
+Route::post('/forums/vote/get', [ForumController::class, 'getVote']);
 
 Route::middleware(['auth:sanctum'])->group(function(){
     // Create Forum Page
@@ -43,7 +44,6 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/forums/edit', [ForumController::class, 'edit']);
 
     Route::post('/forums/vote/add', [ForumController::class, 'addVote']);
-    Route::post('/forums/vote/get', [ForumController::class, 'getVote']);
     Route::post('/forums/vote/delete', [ForumController::class, 'deleteVote']);
     // Delete Specific Forum Page
     Route::delete('/forums/delete', [ForumController::class, 'destroy']);
