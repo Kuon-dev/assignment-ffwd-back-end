@@ -63,4 +63,6 @@ Route::middleware(['auth:sanctum'])->group(function(){
     // Create feedback
     Route::post('/feeback/create', [FeedbackController::class, 'store']);
     // Route::post('/user-all', [FeedbackController::class, 'getAllUser']);
+    // Create Quiz Score
+    Route::post('/quiz/create', [QuizController::class, 'create']);
 });
