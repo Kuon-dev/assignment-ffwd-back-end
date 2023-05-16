@@ -11,8 +11,8 @@ use App\Models\Feedback;
 use App\Models\Vote;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
+# use Spatie\Permission\Models\Role;
+# use Spatie\Permission\Models\Permission;
 
 class DatabaseSeeder extends Seeder
 {
@@ -25,22 +25,25 @@ class DatabaseSeeder extends Seeder
         // ==========================================
         // |  Create 100 users
         // | ----------------------------------------
+        /*
         $rootPerms = Role::create(['name' => 'root']); // Spatie's Permission
         $userPerms = Role::create(['name' => 'user']); // Spatie's Permission
         $adminPerms = Role::create(['name' => 'admin']); // Spatie's Permission
+        */
         $users = [];
         for ($x = 0; $x <= 100; $x++) {
           $defaultUser = User::factory()->create();
-          $defaultUser->assignRole($userPerms);
+          // $defaultUser->assignRole($userPerms);
           $users[] = $defaultUser;
         }
 
         $rootUser = User::factory()->create([
           "name" => "Root",
           "email" => "admin@example.com",
+          "access_level" => "root",
         ]);
 
-        $rootUser->assignRole($rootPerms);
+        // $rootUser->assignRole($rootPerms);
 
         // ==========================================
         // |  Create forums
