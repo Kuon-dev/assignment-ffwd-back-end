@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('phone_number')->nullable();
             $table->text('bio')->nullable();
             $table->string('password');
+            $table->string('access_level');
             $table->rememberToken();
             $table->boolean('is_banned')->default(false);
             $table->timestamps();
