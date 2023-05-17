@@ -63,4 +63,48 @@ class UserController extends Controller {
       200
     );
   }
+
+  public function getAllUser(Request $request) {
+    $users = User::withCount("forum")->get();
+
+    $userData = [];
+
+    foreach ($users as $user) {
+      $userData[] = [
+        "id" => $user->id,
+        "name" => $user->name,
+        "email" => $user->email,
+        "bio" => $user->bio,
+        "phone_number" => $user->phone_number,
+        "role" => $user->access_level,
+        "email_verified_at" => $user->email_verified_at,
+        "is_banned" => $user->is_banned,
+        "listing_count" => $user->forum()->count(),
+      ];
+    }
+    return $userData;
+  }
+
+  public function getUserCount() {
+    $users = User::role("Default")->count();
+
+    $admins = User::role("Admin")->count();
+
+    return response()->json([
+      "users" => $users,
+      "admins" => $admins,
+    ]);
+  }
+
+  public function addAccount(Request $request){
+    $user = User::create([
+      "name" => $request->name,
+      "email" => $request->email,
+      "password" => $request->password,
+      "bio" => '',
+      "phone_number" => $request->phone,
+      "access_level" => $request->role,
+    ]);
+  }
+
 }

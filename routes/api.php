@@ -24,6 +24,9 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/user', [UserController::class, 'checkPerms']);
     Route::post('/user-all', [UserController::class, 'getAllUser']);
     Route::post('/user/update', [UserController::class, 'update']);
+
+    Route::post('/user/manage/all', [UserController::class, 'getAllUser']);
+    Route::get('/user/manage/count', [UserController::class, 'getUserCount']);
 });
 
 //   FORUM    //
