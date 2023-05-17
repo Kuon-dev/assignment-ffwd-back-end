@@ -24,6 +24,8 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/user', [UserController::class, 'checkPerms']);
     Route::post('/user-all', [UserController::class, 'getAllUser']);
     Route::post('/user/update', [UserController::class, 'update']);
+    // Get feedback
+    Route::get('/admin/feedback', [FeedbackController::class, 'index']);
 });
 
 //   FORUM    //
@@ -60,6 +62,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/comments/deleteUser', [CommentController::class, 'deletedByUser']);
     Route::post('/quizzes/get/{id}', [QuizController::class, 'index']);
     Route::post('/score/{id}', [QuizController::class, 'getScore']);
+    
     // Create feedback
     Route::post('/feeback/create', [FeedbackController::class, 'store']);
     // Route::post('/user-all', [FeedbackController::class, 'getAllUser']);
