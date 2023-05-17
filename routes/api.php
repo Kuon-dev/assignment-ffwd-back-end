@@ -19,11 +19,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(["auth:sanctum"])->group(function () {
-  Route::get("/user", [UserController::class, "index"]);
-  Route::post("/user", [UserController::class, "checkPerms"]);
-  Route::post("/user-all", [UserController::class, "getAllUser"]);
-  Route::post("/user/update", [UserController::class, "update"]);
+
+Route::middleware(['auth:sanctum'])->group(function(){
+    Route::get('/user', [UserController::class, 'index']);
+    Route::post('/user', [UserController::class, 'checkPerms']);
+    Route::post('/user-all', [UserController::class, 'getAllUser']);
+    Route::post('/user/update', [UserController::class, 'update']);
+
+    Route::post('/user/manage/all', [UserController::class, 'getAllUser']);
+    Route::get('/user/manage/count', [UserController::class, 'getUserCount']);
 });
 
 //   FORUM    //
@@ -34,15 +38,16 @@ Route::post("/forums/get/{id}", [ForumController::class, "index"]);
 // Specific Forum Page
 Route::post("/forums/get/specific/{id}", [ForumController::class, "show"]);
 // Get all comments of specific forum
-Route::post("/comments/get/{id}", [CommentController::class, "index"]);
-Route::get("/forums/get/hot", [ForumController::class, "showHotToday"]);
+
+Route::post('/comments/get/{id}', [CommentController::class, 'index']);
+Route::get('/forums/get/hot', [ForumController::class, 'showHotToday']);
+Route::post('/forums/vote/get', [ForumController::class, 'getVote']);
 
 Route::middleware(["auth:sanctum"])->group(function () {
   // Create Forum Page
   Route::post("/forums/create", [ForumController::class, "create"]);
   // Edit Specific Forum Page
   Route::post("/forums/edit", [ForumController::class, "edit"]);
-
   Route::post("/forums/vote/add", [ForumController::class, "addVote"]);
   Route::post("/forums/vote/get", [ForumController::class, "getVote"]);
   Route::post("/forums/vote/delete", [ForumController::class, "deleteVote"]);

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('forum_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('forum_id');
             $table->boolean('is_upvote');
             $table->timestamps();
         });
