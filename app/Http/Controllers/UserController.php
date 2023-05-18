@@ -7,7 +7,9 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Validator;
+use Illuminate\Support\Facades\Hash;
 use Symfony\Component\Console\Input\Input;
+use Illuminate\Validation\Rules;
 
 use function Psy\debug;
 
@@ -20,15 +22,13 @@ class UserController extends Controller {
   // check user permission
 
   public function checkPerms(Request $request) {
-    $root = $request->user()->hasRole("root");
-    $admin = $request->user()->hasRole("admin");
-    $default = $request->user()->hasRole("user");
+    $access = $request->user()->access_level;
 
-    if ($root) {
+    if ($access === 'root') {
       return response()->json(["perm_level" => 3]);
-    } elseif ($admin) {
+    } elseif ($access === 'admin') {
       return response()->json(["perm_level" => 2]);
-    } elseif ($default) {
+    } elseif ($access === 'user') {
       return response()->json(["perm_level" => 1]);
     } else {
       return response()->json(["perm_level" => 0]);
@@ -86,9 +86,8 @@ class UserController extends Controller {
   }
 
   public function getUserCount() {
-    $users = User::role("Default")->count();
-
-    $admins = User::role("Admin")->count();
+    $users = User::where("access_level", "user")->count();
+    $admins = User::where("access_level", "admin")->count();
 
     return response()->json([
       "users" => $users,
@@ -97,14 +96,26 @@ class UserController extends Controller {
   }
 
   public function addAccount(Request $request){
+    $request->validate([
+      "name" => ["required", "string", "max:255"],
+      "email" => [
+        "required",
+        "string",
+        "email",
+        "max:255",
+        "unique:" . User::class,
+      ],
+      "password" => ["required", Rules\Password::defaults()],
+    ]);
+
     $user = User::create([
       "name" => $request->name,
       "email" => $request->email,
-      "password" => $request->password,
+      "password" => Hash::make($request->password),
       "bio" => '',
       "phone_number" => $request->phone,
       "access_level" => $request->role,
     ]);
+    return response()->noContent();
   }
-
 }

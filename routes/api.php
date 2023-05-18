@@ -29,6 +29,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::get('/admin/feedback', [FeedbackController::class, 'index']);
     Route::post('/user/manage/all', [UserController::class, 'getAllUser']);
     Route::get('/user/manage/count', [UserController::class, 'getUserCount']);
+    Route::post('/user/manage/profile/add', [UserController::class, 'addAccount']);
 });
 
 //   FORUM    //
