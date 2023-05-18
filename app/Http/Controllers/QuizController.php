@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Quiz;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -59,6 +60,36 @@ class QuizController extends Controller {
     $quiz = Quiz::where("id", $request->quiz_id)->get();
     return response()->json([
       "quiz" => $quiz[0],
+    ]);
+  }
+
+  // get top 10 quiz records of the sleected course based on score and time taken
+  public function topQuizRecords(Request $request) {
+    Log::debug('test');
+    $title = $request->title;
+
+    $quizzes = Quiz::where('title', 'like', "%{$title}%")
+        ->orderByDesc('score')
+        //->orderByRaw('attempted_date - completed_time ASC')
+        ->latest()
+        ->take(10)
+        ->get();
+
+    Log::debug($quizzes);
+
+    $userNames = [];
+
+    // Get usernames in User table corresponding to user_id in Quiz table
+    foreach ($quizzes as $quiz) {
+      $user = User::find($quiz->user_id);
+      if ($user) {
+        $userNames[] = $user->name;
+      }
+    }
+
+    return response()->json([
+        'data' => $quizzes,
+        "users" => $userNames,
     ]);
   }
 }

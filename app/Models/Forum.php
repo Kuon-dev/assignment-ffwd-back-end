@@ -39,6 +39,6 @@ class Forum extends Model {
 
   // Vote
   public function votes(): HasMany {
-    return $this->hasMany(Vote::class, 'id', 'vote_id');
+    return $this->hasMany(Vote::class, 'forum_id', 'id');
   }
 }

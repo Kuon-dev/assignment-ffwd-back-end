@@ -19,11 +19,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware(["auth:sanctum"])->group(function () {
-  Route::get("/user", [UserController::class, "index"]);
-  Route::post("/user", [UserController::class, "checkPerms"]);
-  Route::post("/user-all", [UserController::class, "getAllUser"]);
-  Route::post("/user/update", [UserController::class, "update"]);
+
+Route::middleware(['auth:sanctum'])->group(function(){
+    Route::get('/user', [UserController::class, 'index']);
+    Route::post('/user', [UserController::class, 'checkPerms']);
+    Route::post('/user-all', [UserController::class, 'getAllUser']);
+    Route::post('/user/update', [UserController::class, 'update']);
+    // Get feedback
+    Route::get('/admin/feedback', [FeedbackController::class, 'index']);
+    Route::post('/user/manage/all', [UserController::class, 'getAllUser']);
+    Route::get('/user/manage/count', [UserController::class, 'getUserCount']);
 });
 
 //   FORUM    //
@@ -34,6 +39,7 @@ Route::post("/forums/get/{id}", [ForumController::class, "index"]);
 // Specific Forum Page
 Route::post("/forums/get/specific/{id}", [ForumController::class, "show"]);
 // Get all comments of specific forum
+
 Route::post('/comments/get/{id}', [CommentController::class, 'index']);
 Route::get('/forums/get/hot', [ForumController::class, 'showHotToday']);
 Route::post('/forums/vote/get', [ForumController::class, 'getVote']);
@@ -43,26 +49,37 @@ Route::middleware(["auth:sanctum"])->group(function () {
   Route::post("/forums/create", [ForumController::class, "create"]);
   // Edit Specific Forum Page
   Route::post("/forums/edit", [ForumController::class, "edit"]);
-
-    Route::post('/forums/vote/add', [ForumController::class, 'addVote']);
-    Route::post('/forums/vote/delete', [ForumController::class, 'deleteVote']);
-    // Delete Specific Forum Page By Admin
-    Route::post('/forums/deleteAdmin', [ForumController::class, 'deletedByAdmin']);
-    // Delete Specific Forum Page
-    Route::post('/forums/deleteUser', [ForumController::class, 'deletedByUser']);
-    // Create New Comment
-    Route::post('/comments/create', [CommentController::class, 'store']);
-    // Edit Exisitng Comment
-    Route::post('/comments/edit', [CommentController::class, 'edit']);
-    // Delete Comment By Admin - Set is_removed_by_admin to 1 (Available for admin only)
-    Route::post('/comments/deleteAdmin', [CommentController::class, 'deletedByAdmin']);
-    // Delete Comment By User - Set is_deleted_by_user to 1
-    Route::post('/comments/deleteUser', [CommentController::class, 'deletedByUser']);
-    Route::post('/quizzes/get/{id}', [QuizController::class, 'index']);
-    Route::post('/score/{id}', [QuizController::class, 'getScore']);
-    // Create feedback
-    Route::post('/feeback/create', [FeedbackController::class, 'store']);
-    // Route::post('/user-all', [FeedbackController::class, 'getAllUser']);
-    // Create Quiz Score
-    Route::post('/quiz/create', [QuizController::class, 'create']);
+  Route::post("/forums/vote/add", [ForumController::class, "addVote"]);
+  Route::post("/forums/vote/get", [ForumController::class, "getVote"]);
+  Route::post("/forums/vote/delete", [ForumController::class, "deleteVote"]);
+  // Delete Specific Forum Page By Admin
+  Route::post("/forums/deleteAdmin", [
+    ForumController::class,
+    "deletedByAdmin",
+  ]);
+  // Delete Specific Forum Page
+  Route::post("/forums/deleteUser", [ForumController::class, "deletedByUser"]);
+  // Create New Comment
+  Route::post("/comments/create", [CommentController::class, "store"]);
+  // Edit Exisitng Comment
+  Route::post("/comments/edit", [CommentController::class, "edit"]);
+  // Delete Comment By Admin - Set is_removed_by_admin to 1 (Available for admin only)
+  Route::post("/comments/deleteAdmin", [
+    CommentController::class,
+    "deletedByAdmin",
+  ]);
+  // Delete Comment By User - Set is_deleted_by_user to 1
+  Route::post("/comments/deleteUser", [
+    CommentController::class,
+    "deletedByUser",
+  ]);
+  Route::post("/quizzes/get/{id}", [QuizController::class, "index"]);
+  Route::post("/quizzes/get/specific/{id}", [QuizController::class, "show"]);
+  Route::post("/quizzes/get/top10", [QuizController::class, "topQuizRecords"]);
+  Route::post("/score/{id}", [QuizController::class, "getScore"]);
+  // Create feedback
+  Route::post("/feeback/create", [FeedbackController::class, "store"]);
+  // Route::post('/user-all', [FeedbackController::class, 'getAllUser']);
+  // Create Quiz Score
+  Route::post("/quiz/create", [QuizController::class, "create"]);
 });
