@@ -39,7 +39,7 @@ class User extends Authenticatable {
   //Relationships
   // Forum
   public function forum(): HasMany {
-    return $this->hasMany(Forum::class, 'id', 'forum_id');
+    return $this->hasMany(Forum::class, 'user_id', 'id');
   }
 
   // Comment
