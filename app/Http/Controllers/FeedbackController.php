@@ -7,13 +7,35 @@ use App\Models\Quiz;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Validation\Rules;
 
 class FeedbackController extends Controller {
-  public function index() {
-    // $feedback = Feedback::latest()->get();
+  public function index(Request $request) {
+    $feedbacks = Feedback::latest()
+      ->limit(20)
+      ->get();
 
-    // return response()->json(['feedbacks' => $feedback]);
+    $userNames = [];
+    $quizTitle = [];
+
+    foreach ($feedbacks as $feedback) {
+      $user = User::find($feedback->user_id);
+      if ($user) {
+        $userNames[] = $user->name;
+      }
+
+      $quiz = Quiz::find($feedback->quiz_id);
+      if ($quiz) {
+        $quizTitle[] = $quiz->title;
+      }
+    }
+    
+    return response()->json([
+      'feedbacks' => $feedbacks,
+      'users' => $userNames,
+      'quizs' => $quizTitle,
+    ]);
   }
 
   public function store(Request $request): Response {
