@@ -3,7 +3,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build",
-        "prettier": "prettier --write \"resources/**/*.js\" \"app/**/*.php\""
+        "prettier": "prettier --write \"resources/**/*.js\" \"app/**/*.php\" \"database/**/*.php\""
     },
     "devDependencies": {
         "axios": "^1.1.2",

@@ -31,7 +31,7 @@ Route::get('/dashboard', function (Request $request) {
     return response()-> json(["message" => "already logged in", "route" => "/admin/"]);
   }
   if ($request->user()->access_level === 'user'){
-    return response()-> json(["message" => "already logged in", "route" => "/user/"]);
+    return response()-> json(["message" => "already logged in", "route" => "/forum/"]);
   }
   else
     return response()-> json(["message" => "not yet log in", "route" => ""]);
