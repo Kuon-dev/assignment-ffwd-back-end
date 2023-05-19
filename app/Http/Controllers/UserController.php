@@ -51,10 +51,10 @@ class UserController extends Controller {
   public function update(Request $request) {
     $updateUser = User::find($request->id);
 
-    $updateUser->name = $request->newName;
-    $updateUser->email = $request->newEmail;
-    $updateUser->phone_number = $request->newPhone;
-    $updateUser->bio = $request->newBio;
+    $updateUser->name = $request->name;
+    $updateUser->email = $request->email;
+    $updateUser->phone_number = $request->phone_number;
+    $updateUser->bio = $request->bio;
 
     $updateUser->save();
 
@@ -116,6 +116,16 @@ class UserController extends Controller {
       "phone_number" => $request->phone,
       "access_level" => $request->role,
     ]);
+    return response()->noContent();
+  }
+
+  public function manageAccountStatus(Request $request){
+    $user = User::where('id', $request->id)
+    ->first();
+
+    $user->is_banned = !$user->is_banned;
+    $user->save();
+
     return response()->noContent();
   }
 }
