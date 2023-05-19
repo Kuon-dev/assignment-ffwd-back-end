@@ -19,6 +19,26 @@ class ForumFactory extends Factory {
   public function definition(): array {
     $isDeletedByUser = fake()->randomFloat(2, 0, 1) < 0.95;
     $isDeletedByAdmin = fake()->randomFloat(2, 0, 1) < 0.95;
+
+    $blocks = [];
+    $amount = rand(2,20);
+
+    for($x = 0; $x < $amount; $x++ ){
+      $blocks[] =
+          [
+            "id" => fake()
+              ->unique()
+              ->randomNumber(),
+            "type" => fake()->randomElement(['paragraph', 'header']),
+            "data" => [
+              "text" => fake()->sentence(),
+            ],
+          ];
+      if ($blocks[count($blocks) - 1]['type'] == 'header') {
+          $blocks[count($blocks) - 1]['data']['level'] = fake()->numberBetween(1, 6);
+      }
+    }
+
     return [
       "title" => fake()
         ->unique()
@@ -27,27 +47,7 @@ class ForumFactory extends Factory {
         "time" => fake()
           ->dateTime()
           ->getTimestamp(),
-        "blocks" => [
-          [
-            "id" => fake()
-              ->unique()
-              ->randomNumber(),
-            "type" => "paragraph",
-            "data" => [
-              "text" => fake()->sentence(),
-            ],
-          ],
-          [
-            "id" => fake()
-              ->unique()
-              ->randomNumber(),
-            "type" => "header",
-            "data" => [
-              "text" => fake()->sentence(),
-              "level" => 3,
-            ],
-          ],
-        ],
+        "blocks" => ($blocks)
       ]),
       // 'upvote_count' => fake()->numberBetween(0, 3000),
       // 'downvote_count' => fake()->numberBetween(0, 1000),

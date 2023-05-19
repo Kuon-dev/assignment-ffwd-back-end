@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder {
     // |  Create forums
     // | ----------------------------------------
     $forums = [];
-    for ($x = 0; $x <= 1000; $x++) {
+    for ($x = 0; $x <= 100; $x++) {
       $user = $users[array_rand($users)];
       $forums[] = Forum::factory()->create([
         "user_id" => $user->id,
@@ -57,7 +57,7 @@ class DatabaseSeeder extends Seeder {
     // |  Create comments
     // | ----------------------------------------
     $comments = [];
-    for ($x = 0; $x <= 3000; $x++) {
+    for ($x = 0; $x <= 1000; $x++) {
       $user = $users[array_rand($users)];
       $forum = $forums[array_rand($forums)];
       $comments[] = Comment::factory()->create([
@@ -70,7 +70,7 @@ class DatabaseSeeder extends Seeder {
     // |  Create replies
     // | ----------------------------------------
     $replies = [];
-    for ($x = 0; $x <= 2000; $x++) {
+    for ($x = 0; $x <= 500; $x++) {
       $user = $users[array_rand($users)];
       $comment = $comments[array_rand($comments)];
       $replies[] = Reply::factory()->create([
@@ -94,7 +94,7 @@ class DatabaseSeeder extends Seeder {
     // |  Create feedback
     // | ----------------------------------------
     $feedback = [];
-    for ($x = 0; $x <= 1000; $x++) {
+    for ($x = 0; $x <= 100; $x++) {
       $user = $users[array_rand($users)];
       $quiz = $quizzes[array_rand($quizzes)];
       $feedback[] = Feedback::factory()->create([
@@ -107,7 +107,7 @@ class DatabaseSeeder extends Seeder {
     // |  Create vote
     // | ----------------------------------------
     $votes = [];
-    $unique_votes_count = 10000;
+    $unique_votes_count = 1000;
     while (count($votes) < $unique_votes_count) {
       $user = $users[array_rand($users)];
       $forum = $forums[array_rand($forums)];
