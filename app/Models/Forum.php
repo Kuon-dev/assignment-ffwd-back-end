@@ -28,7 +28,7 @@ class Forum extends Model {
    * Get the comments of forum.
    */
   public function comment(): HasMany {
-    return $this->hasMany(Comment::class, 'id', 'comment_id');
+    return $this->hasMany(Comment::class, "id", "comment_id");
   }
 
   /*
@@ -39,6 +39,6 @@ class Forum extends Model {
 
   // Vote
   public function votes(): HasMany {
-    return $this->hasMany(Vote::class, 'forum_id', 'id');
+    return $this->hasMany(Vote::class, "forum_id", "id");
   }
 }

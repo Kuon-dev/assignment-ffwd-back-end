@@ -24,11 +24,11 @@ class UserController extends Controller {
   public function checkPerms(Request $request) {
     $access = $request->user()->access_level;
 
-    if ($access === 'root') {
+    if ($access === "root") {
       return response()->json(["perm_level" => 3]);
-    } elseif ($access === 'admin') {
+    } elseif ($access === "admin") {
       return response()->json(["perm_level" => 2]);
-    } elseif ($access === 'user') {
+    } elseif ($access === "user") {
       return response()->json(["perm_level" => 1]);
     } else {
       return response()->json(["perm_level" => 0]);
@@ -95,7 +95,7 @@ class UserController extends Controller {
     ]);
   }
 
-  public function addAccount(Request $request){
+  public function addAccount(Request $request) {
     $request->validate([
       "name" => ["required", "string", "max:255"],
       "email" => [
@@ -112,16 +112,15 @@ class UserController extends Controller {
       "name" => $request->name,
       "email" => $request->email,
       "password" => Hash::make($request->password),
-      "bio" => '',
+      "bio" => "",
       "phone_number" => $request->phone,
       "access_level" => $request->role,
     ]);
     return response()->noContent();
   }
 
-  public function manageAccountStatus(Request $request){
-    $user = User::where('id', $request->id)
-    ->first();
+  public function manageAccountStatus(Request $request) {
+    $user = User::where("id", $request->id)->first();
 
     $user->is_banned = !$user->is_banned;
     $user->save();

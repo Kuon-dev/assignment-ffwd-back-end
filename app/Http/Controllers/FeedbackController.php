@@ -30,11 +30,11 @@ class FeedbackController extends Controller {
         $quizTitle[] = $quiz->title;
       }
     }
-    
+
     return response()->json([
-      'feedbacks' => $feedbacks,
-      'users' => $userNames,
-      'quizs' => $quizTitle,
+      "feedbacks" => $feedbacks,
+      "users" => $userNames,
+      "quizs" => $quizTitle,
     ]);
   }
 

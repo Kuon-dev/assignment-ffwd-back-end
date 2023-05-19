@@ -15,8 +15,7 @@ class QuizController extends Controller {
     $title = $request->title;
 
     Log::debug($userID);
-    $test = Quiz::where("user_id", $userID)
-    ->get();
+    $test = Quiz::where("user_id", $userID)->get();
 
     Log::debug($test);
 
@@ -54,7 +53,7 @@ class QuizController extends Controller {
 
   // Get single score based on id
   public function getScore(Request $request) {
-    Log::debug('test');
+    Log::debug("test");
     $quizScore = Quiz::where("id", $request->score_id)->get();
     return response()->json([
       "score" => $quizScore,
@@ -63,7 +62,7 @@ class QuizController extends Controller {
 
   // get specific quiz record details based on quiz_id
   public function show(Request $request) {
-    Log::debug('test');
+    Log::debug("test");
     $quiz = Quiz::where("id", $request->quiz_id)->get();
     return response()->json([
       "quiz" => $quiz[0],
@@ -74,12 +73,12 @@ class QuizController extends Controller {
   public function topQuizRecords(Request $request) {
     $title = $request->title;
 
-    $quizzes = Quiz::where('title', 'like', "%{$title}%")
-        ->orderByDesc('score')
-        ->orderByRaw('TIMESTAMPDIFF(SECOND, attempted_date, completed_time) ASC')
-        ->latest()
-        ->take(10)
-        ->get();
+    $quizzes = Quiz::where("title", "like", "%{$title}%")
+      ->orderByDesc("score")
+      ->orderByRaw("TIMESTAMPDIFF(SECOND, attempted_date, completed_time) ASC")
+      ->latest()
+      ->take(10)
+      ->get();
 
     $userNames = [];
 
@@ -92,8 +91,8 @@ class QuizController extends Controller {
     }
 
     return response()->json([
-        'data' => $quizzes,
-        "users" => $userNames,
+      "data" => $quizzes,
+      "users" => $userNames,
     ]);
   }
 }
