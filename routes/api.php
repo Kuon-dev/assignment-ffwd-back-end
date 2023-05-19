@@ -30,6 +30,7 @@ Route::middleware(['auth:sanctum'])->group(function(){
     Route::post('/user/manage/all', [UserController::class, 'getAllUser']);
     Route::get('/user/manage/count', [UserController::class, 'getUserCount']);
     Route::post('/user/manage/profile/add', [UserController::class, 'addAccount']);
+    Route::post('/user/manage/profile/ban', [UserController::class, 'manageAccountStatus']);
 });
 
 //   FORUM    //
@@ -42,10 +43,11 @@ Route::post("forums/search", [ForumController::class, "search"]);
 // Specific Forum Page
 Route::post("/forums/get/specific/{id}", [ForumController::class, "show"]);
 // Get all comments of specific forum
-
 Route::post('/comments/get/{id}', [CommentController::class, 'index']);
 Route::get('/forums/get/hot', [ForumController::class, 'showHotToday']);
 Route::post('/forums/vote/get', [ForumController::class, 'getVote']);
+
+
 
 Route::middleware(["auth:sanctum"])->group(function () {
   // Create Forum Page
@@ -85,3 +87,7 @@ Route::middleware(["auth:sanctum"])->group(function () {
   // Create Quiz Score
   Route::post("/quiz/create", [QuizController::class, "create"]);
 });
+
+Route::post("/quizzes/get-top/", [QuizController::class, "topQuizRecords"]);
+Route::post("/score", [QuizController::class, "getScore"]);
+Route::post("/quizzes/get/specific/{id}", [QuizController::class, "show"]);

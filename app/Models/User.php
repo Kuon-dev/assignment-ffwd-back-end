@@ -18,7 +18,14 @@ class User extends Authenticatable {
    *
    * @var array<int, string>
    */
-  protected $fillable = ["name", "email", "phone_number", "bio", "password", "access_level"];
+  protected $fillable = [
+    "name",
+    "email",
+    "phone_number",
+    "bio",
+    "password",
+    "access_level",
+  ];
 
   /**
    * The attributes that should be hidden for serialization.
@@ -39,12 +46,12 @@ class User extends Authenticatable {
   //Relationships
   // Forum
   public function forum(): HasMany {
-    return $this->hasMany(Forum::class, 'user_id', 'id');
+    return $this->hasMany(Forum::class, "user_id", "id");
   }
 
   // Comment
   public function comment(): HasMany {
-    return $this->hasMany(Comment::class, 'id', 'comment_id');
+    return $this->hasMany(Comment::class, "id", "comment_id");
   }
 
   // Reply  -- A Forum has Comments which have Replies
@@ -56,16 +63,16 @@ class User extends Authenticatable {
 
   // Quiz
   public function quiz(): HasMany {
-    return $this->hasMany(Quiz::class, 'id', 'quiz_id');
+    return $this->hasMany(Quiz::class, "id", "quiz_id");
   }
 
   // Feedback
   public function feedback(): HasMany {
-    return $this->hasMany(Feedback::class, 'id', 'feedback_id');
+    return $this->hasMany(Feedback::class, "id", "feedback_id");
   }
 
   // Vote
   public function vote(): HasMany {
-    return $this->hasMany(Vote::class, 'id', 'vote_id');
+    return $this->hasMany(Vote::class, "id", "vote_id");
   }
 }

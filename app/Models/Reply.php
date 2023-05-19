@@ -14,10 +14,10 @@ class Reply extends Model {
 
   // Inverse
   public function user(): BelongsTo {
-    return $this->belongsTo(User::class, 'id', 'user_id');
+    return $this->belongsTo(User::class, "id", "user_id");
   }
 
   public function comment(): BelongsTo {
-    return $this->belongsTo(Comment::class, 'id', 'comment_id');
+    return $this->belongsTo(Comment::class, "id", "comment_id");
   }
 }

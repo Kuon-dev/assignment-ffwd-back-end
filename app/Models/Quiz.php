@@ -9,18 +9,18 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Quiz extends Model {
   protected $fillable = [
-    'title',
-    'user_id',
-    'score',
-    'attempted_date',
-    'completed_time',
-];
+    "title",
+    "user_id",
+    "score",
+    "attempted_date",
+    "completed_time",
+  ];
 
   use HasFactory;
 
   // Inverse
   public function user(): BelongsTo {
-    return $this->belongsTo(User::class, 'id', 'user_id');
+    return $this->belongsTo(User::class, "id", "user_id");
   }
 
   public function feedback(): HasOne {
