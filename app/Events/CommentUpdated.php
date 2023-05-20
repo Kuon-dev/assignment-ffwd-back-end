@@ -21,7 +21,7 @@ class CommentUpdated implements ShouldBroadcast {
   public $commentData;
   public $user;
 
-  public function __construct($postId, $commentData, $user) {
+  public function __construct($postId = null, $commentData, $user) {
     $this->postId = $postId;
     $this->commentData = $commentData;
     $this->user = $user;
