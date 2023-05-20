@@ -7,6 +7,7 @@ use App\Models\Quiz;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
 
 class QuizController extends Controller {
   // get all quizzes of the current user (user_id)
@@ -94,5 +95,9 @@ class QuizController extends Controller {
       "data" => $quizzes,
       "users" => $userNames,
     ]);
+  }
+
+  public function getCourse($id){
+    return response((Storage::disk('local')->get('/public/' . $id)));
   }
 }
