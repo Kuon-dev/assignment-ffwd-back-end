@@ -1,17 +1,17 @@
 
 # HTML Heading
 
-Headings in HTML are used to define the hierarchy and structure of the text content on a web page. Headings represent different levels of importance, with the \<h1> element being the highest level and \<h6> being the lowest.
+Headings in HTML are used to define the hierarchy and structure of the text content on a web page. Headings represent different levels of importance, with the `<h1>` element being the highest level and `<h6>` being the lowest.
 
 Here's an example of HTML headings:
 
 ```
-```<h1>This is the Main Heading</h1>
-```<h2>This is a Subheading</h2>
-```<h3>This is a Sub-Subheading</h3>
-```</h4>This is a Sub-Sub-Subheading</h4>
-```<h5>This is a Sub-Sub-Sub-Subheading</h5>
-```<h6>This is the Lowest Level Heading</h6>
+<h1>This is the Main Heading</h1>
+<h2>This is a Subheading</h2>
+<h3>This is a Sub-Subheading</h3>
+</h4>This is a Sub-Sub-Subheading</h4>
+<h5>This is a Sub-Sub-Sub-Subheading</h5>
+<h6>This is the Lowest Level Heading</h6>
 ```
 
 In the example above, we have headings ranging from \<h1> to \<h6>. The text within the opening and closing tags of each heading represents the content of the heading. Headings are displayed with different font sizes and visual styles, with \<h1> being the largest and most prominent.
