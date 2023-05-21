@@ -38,6 +38,8 @@ Route::middleware(['auth:sanctum'])->group(function(){
 Route::get("/forums/pages/count", [ForumController::class, "paginationCount"]);
 // Forum Index Page
 Route::post("/forums/get/{id}", [ForumController::class, "index"]);
+// Search Forum
+Route::post("forums/search", [ForumController::class, "search"]);
 // Specific Forum Page
 Route::post("/forums/get/specific/{id}", [ForumController::class, "show"]);
 // Get all comments of specific forum
@@ -77,6 +79,7 @@ Route::middleware(["auth:sanctum"])->group(function () {
     "deletedByUser",
   ]);
   Route::post("/quizzes/get/{id}", [QuizController::class, "index"]);
+
   // Create feedback
   Route::post("/feeback/create", [FeedbackController::class, "store"]);
   // Route::post('/user-all', [FeedbackController::class, 'getAllUser']);
