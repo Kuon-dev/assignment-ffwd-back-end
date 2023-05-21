@@ -5,7 +5,7 @@ In PHP, a constructor is a special method within a class that is automatically c
 To create a constructor in PHP, you use the `__construct()` method. Here's the basic syntax:
 
 `````````
-php
+<?php>
 class ClassName {
     public function __construct() {
         // Constructor logic here
@@ -18,7 +18,7 @@ class ClassName {
 Inside the constructor, you can perform any initialization tasks or set default values for the object's properties. It is commonly used to ensure that an object starts with the required initial state.
 
 `````````
-php
+<?php>
 class Person {
     public $name;
     public $age;
@@ -37,7 +37,7 @@ In the above example, we have a class named `Person` with two properties: `$name
 To create an object and invoke the constructor, you use the `new` keyword followed by the class name and any required arguments for the constructor.
 
 `````````
-php
+<?php>
 // Create an object of the Person class with constructor arguments
 $person = new Person("John Doe", 25);
 `````````
@@ -49,7 +49,7 @@ When the object is created, the constructor will be automatically called, and th
 In PHP, you can also create constructors with different sets of parameters. This is known as constructor overloading. To achieve this, you can define multiple constructors using the same name but with different parameter lists.
 
 `````````
-php
+<?php>
 class Person {
     public $name;
     public $age;

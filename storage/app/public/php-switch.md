@@ -7,7 +7,7 @@ The switch statement in PHP provides a convenient way to perform different actio
 The syntax of a switch statement in PHP is as follows:
 
 `````````
-php
+<?php>
 switch (expression) {
     case value1:
         // Code to be executed if expression matches value1
@@ -26,7 +26,7 @@ switch (expression) {
 Let's see an example that demonstrates the usage of the switch statement:
 
 `````````
-php
+<?php>
 $day = "Monday";
 
 switch ($day) {
@@ -57,7 +57,7 @@ In this example, the variable `$day` is evaluated against different cases. If th
 You can have multiple cases that execute the same block of code. For example:
 
 `````````
-php
+<?php>
 $day = "Monday";
 
 switch ($day) {

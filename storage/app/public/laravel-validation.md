@@ -8,7 +8,6 @@ Laravel offers a wide range of validation rules out of the box, such as required
 
 Here's an example of validating a form request with some common validation rules:
 
-``
 ```php
 public function rules()
 {
@@ -28,7 +27,6 @@ In addition to the built-in validation rules, Laravel allows you to define custo
 
 Here's an example of defining a custom validation rule:
 
-``
 ```php
 Validator::extend('custom_rule', function ($attribute, $value, $parameters, $validator) {
     // Custom validation logic here
@@ -44,7 +42,6 @@ When validation fails, Laravel automatically redirects the user back to the prev
 
 Here's an example of displaying validation errors in a Blade template:
 
-``
 ```html
 @if ($errors->any())
     <div class="alert alert-danger">
@@ -67,7 +64,6 @@ To customize the error messages, you can define them in the `resources/lang` dir
 
 Here's an example of customizing error messages inline:
 
-``
 ```php
 public function rules()
 {

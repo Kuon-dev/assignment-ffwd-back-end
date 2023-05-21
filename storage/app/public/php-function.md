@@ -7,7 +7,7 @@ Functions are a fundamental part of PHP programming. They allow you to encapsula
 Here's the syntax for defining a function in PHP:
 
 `````````
-php
+<?php>
 function functionName(parameters) {
     // Code to be executed
     // Return statement (optional)
@@ -24,7 +24,7 @@ function functionName(parameters) {
 Let's define a simple function called `greet()` that takes a name as a parameter and returns a greeting message:
 
 `````````
-php
+<?php>
 function greet($name) {
     return "Hello, " . $name . "!";
 }
@@ -33,9 +33,13 @@ function greet($name) {
 To call this function and display the greeting message, you can do the following:
 
 `````````
-php
+<?php>
 $person = "John";
 echo greet($person);
 `````````
 
 Output: Hello, John!
+
+## Conclusion
+
+Conclusion. In conclusion, PHP functions are an important tool for making your code more organized, reusable, and modular. By understanding how to define and call functions in PHP, you can write better, more maintainable code.

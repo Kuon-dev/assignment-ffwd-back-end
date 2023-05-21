@@ -8,7 +8,7 @@ A string is a sequence of characters. It can be enclosed in single quotes ('') o
 
 Example:
 `````````
-php
+<?php>
 $name = 'John';
 `````````
 
@@ -18,7 +18,7 @@ An integer is a whole number without a decimal point. It can be positive or nega
 
 Example:
 `````````
-php
+<?php>
 $age = 25;
 `````````
 
@@ -28,7 +28,7 @@ A float is a number with a decimal point. It is also referred to as a double or 
 
 Example:
 `````````
-php
+<?php>
 $price = 10.99;
 `````````
 
@@ -38,7 +38,7 @@ A boolean represents a logical value, either true or false.
 
 Example:
 `````````
-php
+<?php>
 $isStudent = true;
 `````````
 
@@ -48,7 +48,7 @@ An array is an ordered collection of values. It can store multiple values in a s
 
 Example:
 `````````
-php
+<?php>
 $numbers = [1, 2, 3, 4, 5];
 `````````
 
@@ -58,7 +58,7 @@ An object is an instance of a class. It contains properties and methods that def
 
 Example:
 `````````
-php
+<?php>
 class Person {
     public $name;
     public $age;
@@ -73,7 +73,7 @@ Null represents a variable with no value assigned to it.
 
 Example:
 `````````
-php
+<?php>
 $score = null;
 `````````
 
@@ -83,7 +83,7 @@ A resource is a special variable that holds a reference to an external resource,
 
 Example:
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'r');
 `````````
 

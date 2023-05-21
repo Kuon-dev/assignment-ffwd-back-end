@@ -7,7 +7,7 @@ In PHP, the `include` statement is used to include and evaluate the content of a
 The syntax of the `include` statement is as follows:
 
 `````````
-php
+<?php>
 include 'filename.php';
 `````````
 
@@ -31,7 +31,7 @@ Here are a few usage examples of the `include` statement:
 You can include a PHP file that contains reusable functions or variables. Once included, you can access the functions and variables defined in that file within the current script:
 
 `````````
-php
+<?php>
 // File: utils.php
 function greet($name) {
     echo "Hello, " . $name . "!";
@@ -47,7 +47,7 @@ greet("John"); // Output: Hello, John!
 You can include an HTML template file to reuse common markup across multiple pages. This is particularly useful for headers, footers, or navigation menus:
 
 `````````
-php
+<?php>
 // File: header.php
 <!DOCTYPE html>
 <html>
@@ -68,7 +68,7 @@ include 'footer.php';
 You can include a configuration file that contains important settings or constants for your application. This allows you to centralize configuration and easily make changes when needed:
 
 `````````
-php
+<?php>
 // File: config.php
 define('DB_HOST', 'localhost');
 define('DB_USER', 'username');

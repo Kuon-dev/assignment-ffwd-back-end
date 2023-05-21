@@ -10,9 +10,9 @@ To add an ID to an HTML element, you can use the `id` attribute. The value of th
 Here's an example of adding an ID to a `<div>` element:
 
 ```
-```<div id="my-id">
+<div id="my-id">
   This is a div element with the "my-id" ID.
-```</div>
+</div>
 ```
 
 In this example, the element `<div id="my-id">` has been assigned the ID "my-id". Remember, the ID should be unique within the document.
@@ -24,7 +24,7 @@ Once you have assigned an ID to an element, you can target and select it using C
 Here's an example of styling an element with an ID:
 
 ```
-```#my-id {
+#my-id {
   color: blue;
   font-size: 16px;
 }
@@ -39,7 +39,7 @@ IDs are often used for creating internal links within a web page. You can use th
 To create a link to an element with a specific ID, you can use the anchor tag `<a>` with the `href` attribute pointing to the ID value. Here's an example:
 
 ```
-```<a href="#my-id">Go to My ID</a>
+<a href="#my-id">Go to My ID</a>
 ```
 
 In this example, clicking on the "Go to My ID" link will scroll the page to the element with the ID "my-id". This allows users to navigate directly to a specific section of a long page.

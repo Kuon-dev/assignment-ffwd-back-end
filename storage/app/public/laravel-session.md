@@ -14,7 +14,6 @@ To store data in the session, you can use the `session` helper function or the `
 
 Here's an example of storing data in the session:
 
-``
 ```php
 // Using the session helper function
 session(['key' => 'value']);
@@ -31,7 +30,6 @@ To retrieve data from the session, you can use the `session` helper function or 
 
 Here's an example of retrieving data from the session:
 
-``
 ```php
 // Using the session helper function
 $value = session('key', 'default');
@@ -48,7 +46,6 @@ To remove data from the session, you can use the `forget` method of the session.
 
 Here's an example of removing data from the session:
 
-``
 ```php
 // Using the session helper function
 session()->forget('key');
@@ -65,14 +62,12 @@ Flash data is a convenient way to store temporary data in the session that only 
 
 To store flash data, you can use the `flash` method of the session:
 
-``
 ```php
 session()->flash('key', 'value');
 ```
 
 In the next request, you can retrieve the flash data using the `get` method:
 
-``
 ```php
 $value = session('key');
 ```

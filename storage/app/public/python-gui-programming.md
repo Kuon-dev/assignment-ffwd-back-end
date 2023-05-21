@@ -23,7 +23,7 @@ label.pack()
 
 # Start the Tkinter event loop
 window.mainloop()
-
+```
 In this example, we import the `tkinter` module and create the main window using the `Tk()` constructor. We set the window title using the `title()` method. We create a `Label` widget with the text "Hello, Tkinter!" and pack it into the window using the `pack()` method. Finally, we start the Tkinter event loop using the `mainloop()` method.
 
 ## Widgets and Layout
@@ -59,26 +59,7 @@ radiobutton2.grid(row=4, column=0, sticky="w")
 
 # Start the Tkinter event loop
 window.mainloop()
-
+```
 In this example, we create various widgets such as labels, buttons, entry fields, checkboxes, and radio buttons. We use the `grid()` method to specify the layout of these widgets within a grid. The `row` and `column` parameters indicate the position of each widget, and the `columnspan` parameter allows a widget to span multiple columns.
 
-## Event Handling
 
-GUI applications often respond to user actions such as button clicks or menu selections. Tkinter provides a mechanism for handling events using event-driven programming. Here's an example that demonstrates event handling:
-
-```python
-import tkinter as tk
-
-# Event handler function
-def button_clicked():
-    label.config(text="Button Clicked!")
-
-# Create the main window
-window = tk.Tk()
-
-# Set the window title
-window.title("Event Handling")
-
-# Create a label and button widget
-label = tk.Label(window, text="Hello, Tkinter!")
-button = tk.Button(window, text="Click Me", command=button_clicked

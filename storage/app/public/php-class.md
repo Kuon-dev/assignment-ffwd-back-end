@@ -5,7 +5,7 @@ In PHP, a class is a blueprint for creating objects. It defines the properties (
 To create a class in PHP, you use the `class` keyword followed by the class name. Here's the basic syntax:
 
 `````````
-php
+<?php>
 class ClassName {
     // Properties (attributes)
 
@@ -18,7 +18,7 @@ class ClassName {
 Properties are the variables that hold data within a class. They define the characteristics of an object. You can declare properties inside a class using the visibility keywords `public`, `private`, or `protected`, followed by the variable name.
 
 `````````
-php
+<?php>
 class Person {
     public $name;
     private $age;
@@ -33,7 +33,7 @@ In the above example, we have a class named `Person` with three properties: `$na
 Methods are the functions defined within a class. They represent the behaviors or actions that an object can perform. You can declare methods inside a class using the visibility keywords `public`, `private`, or `protected`, followed by the function definition.
 
 `````````
-php
+<?php>
 class Person {
     public function greet() {
         echo "Hello, I'm a person!";
@@ -56,7 +56,7 @@ In the above example, we have three methods: `greet()`, `calculateAge()`, and `s
 To use a class, you need to create objects (instances) of that class. You do this by using the `new` keyword followed by the class name and parentheses.
 
 `````````
-php
+<?php>
 // Create an object of the Person class
 $person = new Person();
 `````````

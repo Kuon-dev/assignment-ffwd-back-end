@@ -9,14 +9,14 @@ You can define a function in Python using the `def` keyword, followed by the fun
 ```python
 def greet():
     print("Hello, world!")
-
+```
 ## Calling Functions
 
 Once you define a function, you can call it by using its name followed by parentheses `()`. Here's how you can call the `greet()` function defined earlier:
 
 ```python
 greet()  # Output: "Hello, world!"
-
+```
 ## Function Parameters
 
 Functions can accept parameters, which are values passed to the function when it is called. Parameters allow you to provide inputs to a function and customize its behavior. Here's an example:
@@ -24,7 +24,7 @@ Functions can accept parameters, which are values passed to the function when it
 ```python
 def greet(name):
     print("Hello, " + name + "!")
-
+```
 greet("Alice")  # Output: "Hello, Alice!"
 
 ## Return Values
@@ -34,7 +34,7 @@ Functions can also return values using the `return` statement. This allows a fun
 ```python
 def add(a, b):
     return a + b
-
+```
 result = add(3, 5)
 print(result)  # Output: 8
 
@@ -54,7 +54,7 @@ def square(n):
     int: The square of the input number.
     """
     return n * n
-
+```
 ## Function Scope
 
 Variables defined inside a function have local scope, which means they are only accessible within the function. Variables defined outside a function have global scope and can be accessed from anywhere in the program. Here's an example:
@@ -67,6 +67,6 @@ def my_function():
 x = 5  # Global variable
 my_function()  # Output: 10
 print(x)  # Output: 5
-
+```
 Python offers many more advanced features and techniques for working with functions, such as default arguments, variable-length arguments, and recursive functions. Understanding functions is essential for writing modular, reusable, and maintainable code.
 

@@ -8,7 +8,6 @@ To create a view in Laravel, you need to store your view files in the `resources
 
 For example, let's create a view named "welcome.blade.php" that displays a simple welcome message:
 
-``
 ```php
 <!-- resources/views/welcome.blade.php -->
 <h1>Welcome to Laravel!</h1>
@@ -23,7 +22,6 @@ To render a view in Laravel, you can use the `view` helper function. This functi
 
 For example, let's render the "welcome" view:
 
-``
 ```php
 Route::get('/home', function () {
     return view('welcome');
@@ -42,7 +40,6 @@ You can pass data to views by using an associative array as the second parameter
 
 For example, let's pass a variable named "name" to the view:
 
-``
 ```php
 $data = ['name' => 'John Doe'];
 
@@ -57,7 +54,6 @@ Another way to pass data to views is by using the `with` method chained to the `
 
 For example, let's pass a variable named "name" to the view using the `with` method:
 
-``
 ```php
 return view('welcome')->with('name', 'John Doe');
 ```

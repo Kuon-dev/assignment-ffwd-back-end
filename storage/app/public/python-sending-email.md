@@ -25,7 +25,7 @@ msg["Subject"] = "Plain Text Email"
 with smtplib.SMTP("smtp.example.com", 587) as smtp:
     smtp.login("username", "password")
     smtp.send_message(msg)
-
+```
 In this example, we create an `EmailMessage` object and set its content to the plain text message. We set the sender, recipient, and subject using the appropriate message headers. Finally, we use the `smtplib.SMTP` class to connect to the SMTP server, login with the sender's credentials, and send the email.
 
 ## Sending HTML Email
@@ -49,7 +49,7 @@ msg["Subject"] = "HTML Email"
 with smtplib.SMTP("smtp.example.com", 587) as smtp:
     smtp.login("username", "password")
     smtp.send_message(msg)
-
+```
 In this example, we set the `subtype` parameter of the `set_content()` method to `"html"`, indicating that the email content is HTML. The rest of the process is similar to sending a plain text email.
 
 ## Sending Email with Attachments
@@ -78,6 +78,6 @@ msg.add_attachment(attachment_data, maintype="application", subtype="pdf", filen
 with smtplib.SMTP("smtp.example.com", 587) as smtp:
     smtp.login("username", "password")
     smtp.send_message(msg)
-
+```
 In this example, we open the attachment file in binary mode and read its contents. We then use the `add_attachment()` method to attach the file to the email. You can specify the main type and subtype of the attachment content and provide a filename.
 

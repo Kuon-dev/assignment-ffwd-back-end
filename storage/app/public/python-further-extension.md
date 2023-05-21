@@ -16,7 +16,7 @@ response = requests.get("https://api.example.com/data")
 
 # Print the response content
 print(response.content)
-
+```
 In this example, we import the `requests` library, which is not part of the Python standard library. We use the library to make a GET request to an API endpoint and retrieve the response content.
 
 ## Creating Custom Modules
@@ -33,7 +33,7 @@ def greet(name):
     print(f"Hello, {name}!")
 
 3. Save the file.
-
+```
 Now, you can use the `greet()` function from your custom module in another Python script:
 
 ```python
@@ -42,7 +42,7 @@ import my_module
 my_module.greet("Alice")
 
 When you run the above code, it will output "Hello, Alice!" by utilizing the `greet()` function defined in the `my_module.py` file.
-
+```
 ## Building Python Packages
 
 If you have a collection of related modules or a complex project, you can organize them into a Python package. A package is a directory that contains multiple modules and can have a hierarchical structure. By creating a package, you can easily distribute and reuse your code.
@@ -65,7 +65,7 @@ from my_package.subpackage import module3
 
 module1.function1()
 module3.function2()
-
+```
 In this example, we import `function1()` from `module1.py` and `function2()` from `module3.py`, which are part of the `my_package` package.
 
 

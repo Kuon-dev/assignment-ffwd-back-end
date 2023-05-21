@@ -7,7 +7,7 @@ Operators in PHP are used to perform operations on variables and values. PHP pro
 Arithmetic operators are used to perform mathematical operations such as addition, subtraction, multiplication, division, and modulus. Here are some examples:
 
 `````````
-php
+<?php>
 $a = 10;
 $b = 5;
 
@@ -29,7 +29,7 @@ echo $remainder;   // Output: 0
 Assignment operators are used to assign values to variables. They combine the assignment with an arithmetic operation. Here are some examples:
 
 `````````
-php
+<?php>
 $a = 10;
 $b = 5;
 
@@ -47,7 +47,7 @@ echo $a;  // Output: 0
 Comparison operators are used to compare two values. They return a boolean value (true or false) based on the comparison result. Here are some examples:
 
 `````````
-php
+<?php>
 $a = 10;
 $b = 5;
 
@@ -71,7 +71,7 @@ var_dump($result6);  // Output: bool(true)
 Logical operators are used to combine conditional statements. They return a boolean value based on the logical operation performed. Here are some examples:
 
 `````````
-php
+<?php>
 $a = true;
 $b = false;
 

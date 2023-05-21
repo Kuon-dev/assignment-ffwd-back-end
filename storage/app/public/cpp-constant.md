@@ -6,20 +6,20 @@ In C++, a constant is a value that cannot be modified once it is assigned. Const
 
 In C++, constants are typically declared using the `const` keyword. The `const` keyword is used to specify that a variable's value cannot be modified. The general syntax for declaring a constant is:
 
-``cpp
+```cpp
 const data_type constant_name = value;
-
+```
 Here's an example that declares a constant integer:
 
-``cpp
-``#include <iostream>
+```cpp
+#include <iostream>
 
 int main() {
     const int MAX_VALUE = 100;
     std::cout << "The maximum value is: " << MAX_VALUE << std::endl;
     return 0;
 }
-
+```
 In this example, `MAX_VALUE` is a constant integer with a value of 100. It cannot be modified throughout the program.
 
 ## Benefits of Using Constants
@@ -38,8 +38,8 @@ C++ also allows the use of constant expressions, which are evaluated at compile-
 
 Here's an example that demonstrates the use of constant expressions:
 
-``cpp
-``#include <iostream>
+```cpp
+#include <iostream>
 
 constexpr int SQUARE(int x) {
     return x * x;
@@ -52,7 +52,7 @@ int main() {
     std::cout << "The area of a square with length " << LENGTH << " is: " << AREA << std::endl;
     return 0;
 }
-
+```
 In this example, the `SQUARE` function is defined as a `constexpr` function, which means its result can be computed at compile-time. The `LENGTH` constant is used to compute the `AREA` constant using the `SQUARE` function.
 
 ## Conclusion

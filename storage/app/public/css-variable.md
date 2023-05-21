@@ -81,4 +81,4 @@ CSS variables are supported in modern browsers, including most versions of Chrom
 ## Conclusion
 
 CSS variables are a powerful feature that allows you to define and reuse values throughout your stylesheets. They provide flexibility and maintainability, making it easier to update styles across your website. Start using CSS variables in your projects to streamline your CSS code and create more dynamic designs.
-```
+

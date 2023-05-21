@@ -9,7 +9,7 @@ To create a new file in PHP, you can use the `fopen()` function with a mode that
 Here's an example of creating a new file named `output.txt`:
 
 `````````
-php
+<?php>
 $file = fopen('output.txt', 'w');
 fclose($file);
 `````````
@@ -23,7 +23,7 @@ Once you have created a file, you can write data to it using the `fwrite()` func
 Here's an example of writing a string to a file:
 
 `````````
-php
+<?php>
 $file = fopen('output.txt', 'w');
 $data = "Hello, world!";
 fwrite($file, $data);
@@ -35,7 +35,7 @@ In this example, we open the file `output.txt` for writing, assign a string valu
 You can also use the `file_put_contents()` function as a shortcut to create a file and write data to it in one step:
 
 `````````
-php
+<?php>
 $data = "Hello, world!";
 file_put_contents('output.txt', $data);
 `````````
@@ -49,7 +49,7 @@ If you want to append data to an existing file instead of overwriting its conten
 Here's an example of appending data to a file:
 
 `````````
-php
+<?php>
 $file = fopen('output.txt', 'a');
 $data = "This is additional content.";
 fwrite($file, $data);

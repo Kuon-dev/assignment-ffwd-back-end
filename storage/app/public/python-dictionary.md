@@ -10,7 +10,7 @@ You can create a dictionary in Python by enclosing comma-separated key-value pai
 student = {'name': 'John', 'age': 20, 'grade': 'A'}
 employee = {'id': 12345, 'name': 'Alice', 'department': 'HR'}
 empty_dict = {}
-
+```
 ## Accessing Dictionary Values
 
 Values in a dictionary can be accessed by specifying the corresponding key. Here's an example:
@@ -19,7 +19,7 @@ Values in a dictionary can be accessed by specifying the corresponding key. Here
 student = {'name': 'John', 'age': 20, 'grade': 'A'}
 name = student['name']  # Output: 'John'
 age = student['age']  # Output: 20
-
+```
 ## Dictionary Operations
 
 Dictionaries offer several operations for manipulating data:
@@ -32,23 +32,23 @@ Dictionaries offer several operations for manipulating data:
   student = {'name': 'John', 'age': 20}
   student['grade'] = 'A'  # Adding a new key-value pair
   student['age'] = 21  # Updating an existing value
-
+```
 - Deleting: You can remove a key-value pair from a dictionary using the `del` keyword.
 
   Example:
 
-  ```python
+```python
   student = {'name': 'John', 'age': 20}
   del student['age']  # Deleting the 'age' key-value pair
-
+```
 - Length: You can find the number of key-value pairs in a dictionary using the `len()` function.
 
   Example:
 
-  ```python
+```python
   student = {'name': 'John', 'age': 20}
   length = len(student)  # Output: 2
-
+```
 ## Dictionary Methods
 
 Python provides a variety of built-in methods for working with dictionaries. Here are a few commonly used methods:
@@ -57,28 +57,28 @@ Python provides a variety of built-in methods for working with dictionaries. Her
 
   Example:
 
-  ```python
+```python
   student = {'name': 'John', 'age': 20, 'grade': 'A'}
   keys = student.keys()
   print(keys)  # Output: ['name', 'age', 'grade']
-
+```
 - `values()`: Returns a list of all the values in a dictionary.
 
   Example:
 
-  ```python
+```python
   student = {'name': 'John', 'age': 20, 'grade': 'A'}
   values = student.values()
   print(values)  # Output: ['John', 20, 'A']
-
+```
 - `items()`: Returns a list of tuples containing key-value pairs.
 
   Example:
 
-  ```python
+```python
   student = {'name': 'John', 'age': 20, 'grade': 'A'}
   items = student.items()
   print(items)  # Output: [('name', 'John'), ('age', 20), ('grade', 'A')]
-
+```
 Dictionaries are widely used for organizing and manipulating data in Python. They provide a flexible and efficient way to store and access information using meaningful keys. Understanding dictionaries will greatly enhance your ability to work with complex data structures and solve real-world problems.
 

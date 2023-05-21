@@ -9,7 +9,7 @@ To define an interface in PHP, you use the `interface` keyword followed by the n
 Here's an example of defining an interface in PHP:
 
 `````````
-php
+<?php>
 interface Vehicle {
     public function start();
     public function stop();
@@ -25,7 +25,7 @@ To implement an interface in PHP, a class uses the `implements` keyword followed
 Here's an example of a class implementing the `Vehicle` interface:
 
 `````````
-php
+<?php>
 class Car implements Vehicle {
     public function start() {
         echo 'Car started.';
@@ -46,7 +46,7 @@ Interfaces provide a way to define common behavior across different classes. You
 Here's an example of using the `Vehicle` interface:
 
 `````````
-php
+<?php>
 function performVehicleActions(Vehicle $vehicle) {
     $vehicle->start();
     $vehicle->stop();

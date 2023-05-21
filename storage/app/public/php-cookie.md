@@ -6,8 +6,8 @@ Cookies are small pieces of data stored on the user's computer by the web browse
 
 To set a cookie in PHP, you can use the `setcookie()` function. This function takes several parameters, including the cookie name, value, expiration time, path, domain, and security options. Here's an example:
 
-``````php
-<?php
+``````
+<?php>
 // Set a cookie named "username" with the value "John"
 setcookie("username", "John", time() + 3600, "/");
 echo "Cookie has been set.";
@@ -20,8 +20,8 @@ In this example, we use the `setcookie()` function to set a cookie named "userna
 
 Once a cookie is set, you can retrieve its value using the `$_COOKIE` superglobal variable. This variable is an associative array that holds all the cookies sent by the client. Here's an example:
 
-``````php
-<?php
+``````
+<?php>
 // Check if the "username" cookie is set
 if (isset($_COOKIE["username"])) {
     $username = $_COOKIE["username"];
@@ -38,8 +38,8 @@ In this example, we check if the "username" cookie is set using the `isset()` fu
 
 To delete a cookie, you can use the `setcookie()` function with an expired expiration time. Here's an example:
 
-``````php
-<?php
+``````
+<?php>
 // Delete the "username" cookie
 setcookie("username", "", time() - 3600, "/");
 echo "Cookie has been deleted.";

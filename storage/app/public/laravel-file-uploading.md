@@ -18,7 +18,6 @@ In your HTML form, add an input field with the `file` type to allow users to sel
 
 Here's an example form using Laravel's Blade templating engine:
 
-``
 ```html
 <form action="/upload" method="POST" enctype="multipart/form-data">
     @csrf
@@ -35,7 +34,6 @@ In your server-side code, typically within a controller method, you can handle t
 
 Here's an example of handling the uploaded file:
 
-``
 ```php
 public function upload(Request $request)
 {
@@ -57,7 +55,6 @@ Once the file is uploaded and stored, you can perform additional processing or s
 
 Here's an example of processing the uploaded file:
 
-``
 ```php
 public function upload(Request $request)
 {

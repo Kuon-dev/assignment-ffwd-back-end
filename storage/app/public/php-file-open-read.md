@@ -9,7 +9,7 @@ To open a file in PHP, you can use the `fopen()` function. It takes two paramete
 Here's an example of opening a file for reading:
 
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'r');
 `````````
 
@@ -22,7 +22,7 @@ Once you have opened a file, you can read its contents using various functions. 
 Here's an example of reading a file line by line:
 
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'r');
 while (!feof($file)) {
     $line = fgets($file);
@@ -36,7 +36,7 @@ In this example, we read each line from the file using `fgets()` inside a `while
 Alternatively, you can use the `file()` function to read the entire file into an array, where each element represents a line from the file:
 
 `````````
-php
+<?php>
 $lines = file('data.txt');
 foreach ($lines as $line) {
     echo $line;
@@ -50,7 +50,7 @@ In this example, the `file()` function reads the entire file `data.txt` and stor
 After you have finished reading the file, it's important to close it using the `fclose()` function. This releases the system resources associated with the file and frees up memory.
 
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'r');
 // Read file contents...
 fclose($file);

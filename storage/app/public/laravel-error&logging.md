@@ -16,7 +16,6 @@ Laravel allows you to log errors using various logging channels. The default log
 
 To log errors, you can use the `Log` facade:
 
-``
 ```php
 use Illuminate`Support`Facades`Log;
 
@@ -27,7 +26,6 @@ This will log the error message to the default log channel specified in the conf
 
 You can also specify a different logging channel:
 
-``
 ```php
 Log::channel('custom-channel')->error('An error occurred');
 ```
@@ -48,7 +46,6 @@ Laravel provides a powerful logging system that allows you to log various types 
 
 To write log messages, you can use the `Log` facade:
 
-``
 ```php
 use Illuminate`Support`Facades`Log;
 
@@ -65,7 +62,6 @@ Laravel supports multiple logging channels, allowing you to log messages to diff
 
 You can specify the logging channel when writing log messages:
 
-``
 ```php
 Log::channel('custom-channel')->info('This is a custom log message');
 ```
@@ -93,7 +89,6 @@ Laravel supports different log levels that allow you to categorize log messages 
 
 You can specify the log level when writing log messages:
 
-``
 ```php
 Log::debug('Debug message');
 Log::info('Information message');

@@ -6,7 +6,7 @@ In Laravel, controllers provide a way to organize your application's request han
 
 To create a new controller, you can use the `make:controller` Artisan command:
 
-``
+
 ```php
 php artisan make:controller UserController
 ```
@@ -19,7 +19,7 @@ Within the controller file, you can define methods to handle different HTTP requ
 
 For example, let's define a `UserController` with a `show` method that retrieves a user's details:
 
-``
+
 ```php
 namespace App`Http`Controllers;
 
@@ -48,7 +48,7 @@ To route requests to your controllers, you can define routes in the `routes/web.
 
 For example, to route a `GET` request for `/user/{id}` to the `show` method of the `UserController`, you can do the following:
 
-``
+
 ```php
 use App`Http`Controllers`UserController;
 
@@ -63,7 +63,7 @@ Laravel's controller classes are resolved through the container, allowing you to
 
 For example, let's modify the `show` method to inject the `Request` instance:
 
-``
+
 ```php
 use Illuminate`Http`Request;
 

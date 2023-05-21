@@ -6,7 +6,7 @@ To generate scaffolding for a resource, you can use the `rails generate scaffold
 
 ```ruby
 rails generate scaffold Post title:string body:text published:boolean
-
+```
 In this example, we are generating a scaffold for a `Post` resource with three attributes: `title` of type string, `body` of type text, and `published` of type boolean. Running this command will create the following files:
 
 - A migration file in the `db/migrate` directory to create the corresponding database table.

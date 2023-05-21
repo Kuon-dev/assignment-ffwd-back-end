@@ -7,7 +7,7 @@ Arrays are a fundamental data structure in PHP that allow you to store and manip
 Here's the syntax for creating an array in PHP:
 
 `````````
-php
+<?php>
 $arrayName = [value1, value2, value3, ...];
 `````````
 
@@ -17,7 +17,7 @@ $arrayName = [value1, value2, value3, ...];
 You can also use the `array()` function to create an array:
 
 `````````
-php
+<?php>
 $arrayName = array(value1, value2, value3, ...);
 `````````
 
@@ -26,14 +26,14 @@ $arrayName = array(value1, value2, value3, ...);
 Let's create an array called `fruits` that stores multiple fruit names:
 
 `````````
-php
+<?php>
 $fruits = ["Apple", "Banana", "Orange"];
 `````````
 
 To access and display the values of the array, you can use their corresponding indices:
 
 `````````
-php
+<?php>
 echo $fruits[0]; // Output: Apple
 echo $fruits[1]; // Output: Banana
 echo $fruits[2]; // Output: Orange
@@ -52,7 +52,7 @@ To add elements to an array, you can use the following methods:
 The `array_push()` function adds one or more elements to the end of an array:
 
 `````````
-php
+<?php>
 array_push($fruits, "Mango", "Grapes");
 `````````
 
@@ -61,7 +61,7 @@ array_push($fruits, "Mango", "Grapes");
 You can assign a new key to add an element at a specific index:
 
 `````````
-php
+<?php>
 $fruits[3] = "Pineapple";
 `````````
 
@@ -74,7 +74,7 @@ To remove elements from an array, you can use the following methods:
 The `unset()` function removes a specific element from an array:
 
 `````````
-php
+<?php>
 unset($fruits[2]); // Remove Orange
 `````````
 
@@ -83,7 +83,7 @@ unset($fruits[2]); // Remove Orange
 The `array_pop()` function removes the last element from an array:
 
 `````````
-php
+<?php>
 array_pop($fruits); // Remove Grapes
 `````````
 
@@ -92,7 +92,7 @@ array_pop($fruits); // Remove Grapes
 To modify an existing element in an array, you can simply assign a new value to its corresponding index:
 
 `````````
-php
+<?php>
 $fruits[0] = "Strawberry";
 `````````
 

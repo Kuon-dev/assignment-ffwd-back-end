@@ -77,6 +77,3 @@ span {
 
 In this example, the `span` selector targets a specific span of text. The `animation` property applies the `pulse` animation, which lasts for 2 seconds and repeats infinitely. The `@keyframes` rule defines the keyframe percentages and the property values at each keyframe. In this case, the text pulses by changing the font size.
 
-## Adding Text Decorations
-
-Text

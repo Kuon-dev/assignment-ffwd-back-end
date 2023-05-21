@@ -22,7 +22,7 @@ thread.start()
 
 # Wait for the thread to finish
 thread.join()
-
+```
 In this example, we define a function `print_numbers()` that prints numbers from 1 to 5. We create a `Thread` object and pass the function to be executed as the `target` parameter. We start the thread using the `start()` method and wait for it to finish using the `join()` method.
 
 ## Thread Synchronization
@@ -60,7 +60,7 @@ for thread in threads:
     thread.join()
 
 print("Counter:", counter)
-
+```
 In this example, we have a shared variable `counter` that is incremented by multiple threads. We create a `Lock` object using the `Lock` class and acquire/release the lock using the `acquire()` and `release()` methods, respectively. This ensures that only one thread can modify the counter at a time, preventing data corruption.
 
 ## Thread Communication
@@ -88,7 +88,7 @@ sender_thread.start()
 while not message_queue.empty():
     message = message_queue.get()
     print(message)
-
+```
 In this example, we create a `Queue` object using the `Queue` class. One thread (`sender()`) puts messages into the queue using the `put()` method, while the main thread retrieves and prints messages using the `get()` method. This allows for communication between the threads through a shared queue.
 
 

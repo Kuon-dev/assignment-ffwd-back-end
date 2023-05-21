@@ -79,6 +79,3 @@ div {
 
 In this example, the `transform` property combines rotation around the X and Y axes with translation along the Z-axis. The element is rotated in both the X and Y directions and then moved towards the viewer by 100 pixels.
 
-## Perspective vs. Transform Style
-
-When working with 3D transforms

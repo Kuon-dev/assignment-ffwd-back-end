@@ -10,7 +10,6 @@ Blade templates use the `.blade.php` file extension and provide various features
 
 To output a variable's value in a Blade template, you can use double curly braces `{{ }}`. For example:
 
-``
 ```php
 <h1>Welcome, {{ $name }}!</h1>
 ```
@@ -25,7 +24,6 @@ Blade templates provide control structures to handle conditional and iterative l
 
 You can use `@if`, `@elseif`, `@else`, and `@endif` to perform conditional statements:
 
-``
 ```php
 @if ($count > 0)
     <p>There are items in the list.</p>
@@ -40,7 +38,6 @@ You can use `@if`, `@elseif`, `@else`, and `@endif` to perform conditional state
 
 Blade templates offer `@foreach`, `@for`, and `@while` directives for looping through data:
 
-``
 ```php
 @foreach ($users as $user)
     <p>{{ $user->name }}</p>
@@ -53,7 +50,6 @@ Blade allows you to include subviews within your main view using the `@include` 
 
 For example, let's create a subview called "header.blade.php" and include it in another view:
 
-``
 ```php
 <!-- resources/views/header.blade.php -->
 <header>
@@ -61,7 +57,6 @@ For example, let's create a subview called "header.blade.php" and include it in 
 </header>
 ```
 
-``
 ```php
 <!-- resources/views/home.blade.php -->
 @include('header')
@@ -78,7 +73,6 @@ Blade templates support layout inheritance, allowing you to define a master layo
 
 First, create a master layout called "layout.blade.php":
 
-``
 ```php
 <!-- resources/views/layout.blade.php -->
 <html>
@@ -93,7 +87,6 @@ First, create a master layout called "layout.blade.php":
 
 Then, create a view that extends the layout:
 
-``
 ```php
 <!-- resources/views/home.blade.php -->
 @extends('layout')

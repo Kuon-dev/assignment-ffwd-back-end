@@ -14,7 +14,7 @@ To define a namespace for your classes, you need to add the appropriate namespac
 
 For example, if you have a file `app/Http/Controllers/WelcomeController.php`, you would define the namespace as follows:
 
-``
+
 ```php
 namespace App`Http`Controllers;
 
@@ -30,7 +30,7 @@ To use a class from a different namespace within your code, you need to either p
 
 For example, if you have a class `App`Models`User` and want to use it in your controller, you can import it as follows:
 
-``
+
 ```php
 namespace App`Http`Controllers;
 
@@ -48,7 +48,7 @@ class UserController
 
 Alternatively, you can use the fully qualified class name without importing:
 
-``
+
 ```php
 namespace App`Http`Controllers;
 
@@ -68,7 +68,7 @@ In some cases, you may want to alias a namespace to make it easier to reference 
 
 For example, you can define an alias for the `App`Models` namespace as follows:
 
-``
+
 ```php
 'aliases' => [
     // Other aliases

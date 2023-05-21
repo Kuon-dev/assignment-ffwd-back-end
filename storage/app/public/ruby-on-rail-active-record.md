@@ -17,17 +17,17 @@ This model assumes there is a `users` table in the database. Active Record infer
 ## CRUD Operations
 
 Active Record provides a set of methods to perform CRUD (Create, Read, Update, Delete) operations on database records.
-
-### Create
+```
+## Create
 
 To create a new record, you can use the `create` method:
 
 ```ruby
 user = User.create(name: 'John', email: 'john@example.com')
-
+```
 This will create a new `User` object and save it to the database.
 
-### Read
+## Read
 
 To fetch records from the database, you can use various methods:
 
@@ -44,8 +44,8 @@ user = User.find(1)
 users = User.where(age: 25)
 first_user = User.first
 last_user = User.last
-
-### Update
+```
+## Update
 
 To update an existing record, you can modify its attributes and call the `save` method:
 
@@ -53,21 +53,21 @@ To update an existing record, you can modify its attributes and call the `save` 
 user = User.find(1)
 user.name = 'Updated Name'
 user.save
-
+```
 Alternatively, you can use the `update` method to update multiple records at once:
 
 ```ruby
 User.update_all(name: 'New Name')
-
-### Delete
+```
+## Delete
 
 To delete a record, you can call the `destroy` method on the object:
 
 ```ruby
 user = User.find(1)
 user.destroy
-
-### Associations
+```
+## Associations
 
 Active Record allows you to define associations between models, representing relationships between database tables. Some common association types include `belongs_to`, `has_many`, and `has_many :through`.
 
@@ -81,7 +81,7 @@ end
 class User < ActiveRecord::Base
   has_many :comments
 end
-
+```
 This association allows a user to have multiple comments, and each comment belongs to a user.
 
 ## Conclusion
