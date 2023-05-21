@@ -90,3 +90,4 @@ Route::middleware(["auth:sanctum"])->group(function () {
 Route::post("/quizzes/get-top/", [QuizController::class, "topQuizRecords"]);
 Route::post("/score", [QuizController::class, "getScore"]);
 Route::post("/quizzes/get/specific/{id}", [QuizController::class, "show"]);
+Route::get("/course/get/{id}", [QuizController::class, "getCourse"]);
