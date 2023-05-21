@@ -9,7 +9,7 @@ A parent class, also known as a base class or superclass, serves as the blueprin
 Here's an example of a parent class in PHP:
 
 `````````
-php
+<?php>
 class Animal {
     public $name;
     protected $age;
@@ -40,7 +40,7 @@ To create a subclass in PHP, you use the `extends` keyword followed by the name 
 Here's an example of a subclass inheriting from the `Animal` class:
 
 `````````
-php
+<?php>
 class Dog extends Animal {
     public function bark() {
         echo $this->name . ' is barking.';
@@ -55,7 +55,7 @@ In the above example, we define a class called `Dog` that extends the `Animal` c
 Now that we have both the parent class `Animal` and the child class `Dog`, let's see how we can use inheritance:
 
 `````````
-php
+<?php>
 // Create an instance of the Animal class
 $animal = new Animal('Leo', 5);
 $animal->eat(); // Output: Leo is eating.

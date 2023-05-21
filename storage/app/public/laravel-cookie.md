@@ -8,7 +8,6 @@ To set a cookie in Laravel, you can use the `Cookie` facade's `queue` method. Th
 
 For example, let's set a cookie named `username` with the value `"john"`:
 
-``
 ```php
 use Illuminate`Support`Facades`Cookie;
 
@@ -23,7 +22,6 @@ To retrieve a cookie value in Laravel, you can use the `Cookie` facade's `get` m
 
 For example, let's retrieve the value of the `username` cookie:
 
-``
 ```php
 use Illuminate`Support`Facades`Cookie;
 
@@ -38,7 +36,6 @@ To delete a cookie in Laravel, you can use the `Cookie` facade's `forget` method
 
 For example, let's delete the `username` cookie:
 
-``
 ```php
 use Illuminate`Support`Facades`Cookie;
 
@@ -53,7 +50,6 @@ Laravel provides built-in support for encrypting cookies to enhance security. Wh
 
 To set an encrypted cookie, you can use the `encrypt` method of the `Cookie` facade:
 
-``
 ```php
 use Illuminate`Support`Facades`Cookie;
 
@@ -65,7 +61,6 @@ In this example, the `encrypt` function is used to encrypt the cookie value befo
 
 When retrieving an encrypted cookie, Laravel will automatically decrypt the value for you:
 
-``
 ```php
 use Illuminate`Support`Facades`Cookie;
 

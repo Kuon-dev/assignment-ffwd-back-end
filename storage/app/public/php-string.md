@@ -7,7 +7,7 @@ In PHP, a string is a sequence of characters enclosed in single quotes ('') or d
 To create a string, you can simply assign a value to a variable using quotes:
 
 `````````
-php
+<?php>
 $name = 'John';
 $message = "Hello, World!";
 `````````
@@ -17,7 +17,7 @@ $message = "Hello, World!";
 You can concatenate (join) strings together using the concatenation operator (`.`):
 
 `````````
-php
+<?php>
 $firstName = 'John';
 $lastName = 'Doe';
 $fullName = $firstName . ' ' . $lastName;
@@ -30,7 +30,7 @@ In this example, the value of `$fullName` will be `'John Doe'`.
 PHP supports string interpolation, which allows you to embed variables directly within a string using double quotes:
 
 `````````
-php
+<?php>
 $name = 'John';
 $message = "Hello, $name!";
 `````````
@@ -50,7 +50,7 @@ PHP provides a wide range of built-in functions for working with strings. Here a
 Here's an example that demonstrates the usage of these functions:
 
 `````````
-php
+<?php>
 $text = 'Hello, World!';
 $length = strlen($text);
 $lowercase = strtolower($text);
@@ -74,7 +74,7 @@ PHP supports escape sequences, which are special characters that allow you to re
 Example:
 
 `````````
-php
+<?php>
 $message = "This is a ```"quoted```" text.";
 $newline = "First line```nSecond line";
 `````````

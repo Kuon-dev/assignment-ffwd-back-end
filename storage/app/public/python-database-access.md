@@ -16,7 +16,7 @@ connection = mysql.connector.connect(
     password="password",
     database="database_name"
 )
-
+```
 In this example, we import the `mysql.connector` module and use the `connect()` function to establish a connection to a MySQL database. You need to provide the host, user, password, and database name as parameters.
 
 ## Executing SQL Queries
@@ -49,7 +49,7 @@ for row in results:
 # Close the cursor and connection
 cursor.close()
 connection.close()
-
+```
 In this example, we establish a connection to a MySQL database as before. We then create a cursor using the `cursor()` method of the connection object. The `execute()` method is used to execute the SQL query, and the `fetchall()` method retrieves all the rows returned by the query.
 
 ## Parameterized Queries
@@ -83,32 +83,6 @@ for row in results:
 # Close the cursor and connection
 cursor.close()
 connection.close()
-
+```
 In this example, we use a parameterized query by using a placeholder `%s` in the SQL query. The actual parameter value is provided as a tuple `params` in the `execute()` method.
 
-## Handling Transactions
-
-Python database libraries also support transactions, which allow you to group multiple database operations into a single unit of work. Transactions ensure data integrity and consistency. Here's an example:
-
-```python
-import mysql.connector
-
-# Establish a connection
-connection = mysql.connector.connect(
-    host="localhost",
-    user="username",
-    password="password",
-    database="database_name"
-)
-
-# Create a cursor
-cursor = connection.cursor()
-
-try:
-    # Start a transaction
-    connection.start_transaction()
-
-    # Execute multiple queries
-    query1 = "INSERT INTO table_name (column1, column2) VALUES (%s, %s)"
-    params1 = ("value1", "value2")
-   

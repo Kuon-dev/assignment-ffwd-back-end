@@ -8,7 +8,7 @@ To use functions or classes from a module, you need to import the module into yo
 
 ```python
 import math
-
+```
 # Now you can use functions from the math module
 print(math.sqrt(25))  # Output: 5.0
 
@@ -20,7 +20,7 @@ You can provide an alias to a module name using the `as` keyword. This can make 
 import math as m
 
 print(m.pi)  # Output: 3.141592653589793
-
+```
 ## Importing Specific Items
 
 Instead of importing an entire module, you can import specific items using the `from` keyword. This allows you to use the item directly without referencing the module name. Here's an example:
@@ -29,7 +29,7 @@ Instead of importing an entire module, you can import specific items using the `
 from math import sqrt
 
 print(sqrt(16))  # Output: 4.0
-
+```
 ## Importing All Items
 
 If you want to import all items from a module, you can use the `*` wildcard character. However, it's generally recommended to import specific items to avoid polluting the namespace. Here's an example:
@@ -38,7 +38,7 @@ If you want to import all items from a module, you can use the `*` wildcard char
 from math import *
 
 print(sin(0))  # Output: 0.0
-
+```
 ## Creating Your Own Modules
 
 You can also create your own modules by defining functions, classes, or variables in a separate Python file. To use these modules, you need to place them in the same directory as your script or specify the path to the module. Here's an example:
@@ -53,6 +53,6 @@ def greet(name):
 import my_module
 
 my_module.greet("Alice")  # Output: "Hello, Alice!"
-
+```
 Python offers a wide range of built-in modules and a vast collection of third-party modules that can be installed using package managers like `pip`. These modules provide functionality for tasks such as working with files, networking, databases, web development, and more.
 

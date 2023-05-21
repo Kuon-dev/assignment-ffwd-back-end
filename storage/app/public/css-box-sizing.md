@@ -65,4 +65,4 @@ The `box-sizing` property is well-supported in modern browsers, including most v
 ## Conclusion
 
 Understanding and using the `box-sizing` property is crucial for controlling the dimensions and layout of your HTML elements. By adjusting the box sizing model, you can create consistent and flexible designs. Experiment with different box sizing options to find the best approach for your projects.
-```
+

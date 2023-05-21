@@ -33,7 +33,7 @@ client_socket.send(response.encode())
 # Close the connection
 client_socket.close()
 server_socket.close()
-
+```
 In this example, we create a TCP server socket using the `socket.socket()` method. We bind the socket to a specific address and port using the `bind()` method. Then, we listen for incoming connections using the `listen()` method. When a client connects, we accept the connection using the `accept()` method. We can then receive data from the client using the `recv()` method and send a response using the `send()` method.
 
 ## Sending and Receiving Data
@@ -60,7 +60,7 @@ print("Response:", response.decode())
 
 # Close the connection
 client_socket.close()
-
+```
 In this example, we create a TCP client socket and connect it to the server using the `connect()` method. We can then send data to the server using the `send()` method and receive a response using the `recv()` method.
 
 ## Working with Protocols
@@ -85,7 +85,7 @@ print("Body:", response.read().decode())
 
 # Close the connection
 connection.close()
-
+```
 In this example, we create an HTTPS connection to `www.example.com` using the `http.client.HTTPSConnection()` method. We then send an HTTP request using the `request()` method and get the response using the `getresponse()` method. Finally, we can access the response status code and body.
 
 ## Conclusion

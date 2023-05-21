@@ -9,7 +9,7 @@ In PHP, the math functions allow you to perform various mathematical operations 
 PHP provides basic math functions for addition, subtraction, multiplication, and division. Here are some examples:
 
 `````````
-php
+<?php>
 $a = 10;
 $b = 5;
 
@@ -26,7 +26,7 @@ In this example, the value of `$sum` will be `15`, `$difference` will be `5`, `$
 PHP also provides functions for exponentiation and modulus (remainder) operations. Here are some examples:
 
 `````````
-php
+<?php>
 $a = 2;
 $b = 3;
 
@@ -41,7 +41,7 @@ In this example, the value of `$power` will be `8` (2 raised to the power of 3),
 PHP includes functions to calculate the absolute value and square root of a number. Here are some examples:
 
 `````````
-php
+<?php>
 $number = -4.5;
 
 $absolute = abs($number);    // Absolute Value
@@ -64,7 +64,7 @@ PHP also provides a variety of advanced math functions for more complex calculat
 Here's an example that demonstrates the usage of these functions:
 
 `````````
-php
+<?php>
 $number = 4.75;
 
 $rounded = round($number);     // Rounded to the nearest integer

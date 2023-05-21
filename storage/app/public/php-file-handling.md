@@ -7,7 +7,7 @@ File handling in PHP allows you to read from and write to files on the server's 
 To open a file in PHP, you can use the `fopen()` function. It takes two parameters: the filename (including the path) and the mode. The mode specifies the purpose of opening the file, whether it is for reading, writing, or both. Here's an example of opening a file for reading:
 
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'r');
 `````````
 
@@ -18,7 +18,7 @@ In this example, we open a file named `data.txt` in read mode (`'r'`). The `fope
 Once you have opened a file, you can read its contents using various functions. The most common function is `fgets()`, which reads a single line from the file. Here's an example:
 
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'r');
 while (!feof($file)) {
     $line = fgets($file);
@@ -34,7 +34,7 @@ In this example, we read each line from the file using `fgets()` inside a `while
 To write data to a file, you can use the `fwrite()` function. It takes the file handle and the data you want to write as parameters. Here's an example:
 
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'w');
 fwrite($file, 'Hello, World!');
 fclose($file);
@@ -47,7 +47,7 @@ In this example, we open the file `data.txt` in write mode (`'w'`) and use `fwri
 If you want to add content to an existing file without overwriting its contents, you can open the file in append mode (`'a'`). This allows you to append data to the end of the file. Here's an example:
 
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'a');
 fwrite($file, 'New content');
 fclose($file);
@@ -60,7 +60,7 @@ In this example, we open the file `data.txt` in append mode (`'a'`) and write th
 After you have finished working with a file, it's important to close it using the `fclose()` function. This releases the system resources associated with the file and frees up memory. Here's an example:
 
 `````````
-php
+<?php>
 $file = fopen('data.txt', 'r');
 // Perform file operations...
 fclose($file);

@@ -12,8 +12,8 @@ C++ provides signedness modifiers to specify whether a variable can represent bo
 
 Here's an example that demonstrates the use of signedness modifiers:
 
-``cpp
-``#include <iostream>
+```cpp
+#include <iostream>
 
 int main() {
     signed int negativeNumber = -10;
@@ -24,7 +24,7 @@ int main() {
 
     return 0;
 }
-
+```
 In this example, the variable `negativeNumber` is declared as `signed int`, allowing it to store both positive and negative values. The variable `positiveNumber` is declared as `unsigned int`, limiting it to positive values only.
 
 ## Size Modifiers
@@ -37,8 +37,8 @@ C++ provides size modifiers to specify the storage size of variables. These modi
 
 Here's an example that demonstrates the use of size modifiers:
 
-``cpp
-``#include <iostream>
+```cpp
+#include <iostream>
 
 int main() {
     short int smallNumber = 10;
@@ -49,7 +49,7 @@ int main() {
 
     return 0;
 }
-
+```
 In this example, the variable `smallNumber` is declared as `short int`, using less memory compared to a regular `int`. The variable `largeNumber` is declared as `long int`, allowing it to store larger values at the expense of increased memory usage.
 
 ## Conclusion

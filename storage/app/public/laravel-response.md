@@ -8,7 +8,6 @@ To create a basic response in Laravel, you can use the `response` helper functio
 
 For example, let's create a simple response with the text "Hello, Laravel!":
 
-``
 ```php
 $response = response('Hello, Laravel!');
 ```
@@ -21,7 +20,6 @@ By default, Laravel sets the content type of the response to `text/html`. Howeve
 
 For example, let's set the response content type to `application/json`:
 
-``
 ```php
 $response->header('Content-Type', 'application/json');
 ```
@@ -34,7 +32,6 @@ Laravel provides a convenient method for returning JSON responses using the `jso
 
 For example, let's return a JSON response with an array of data:
 
-``
 ```php
 $response = response()->json(['name' => 'John', 'age' => 30]);
 ```
@@ -47,7 +44,6 @@ You can use the `redirect` helper function to create a redirect response in Lara
 
 For example, let's redirect the user to the home page:
 
-``
 ```php
 return redirect('/');
 ```
@@ -60,7 +56,6 @@ Laravel allows you to return views as responses using the `view` helper function
 
 For example, let's return a view named "welcome" as the response:
 
-``
 ```php
 return view('welcome');
 ```
@@ -73,7 +68,6 @@ You can use the `download` method of the `Response` instance to create a file do
 
 For example, let's create a response to download a file named "example.pdf":
 
-``
 ```php
 return response()->download('/path/to/example.pdf');
 ```

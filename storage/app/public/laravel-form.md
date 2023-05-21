@@ -10,7 +10,6 @@ To create a form in Laravel, you can use the `Form` facade or the `form` helper 
 
 To start a form, you can use the `open` method:
 
-``
 ```php
 echo Form::open(['url' => 'example-route', 'method' => 'POST']);
 // or
@@ -27,7 +26,6 @@ Laravel provides methods for generating various form elements, including input f
 
 To generate a text input field, you can use the `text` method:
 
-``
 ```php
 echo Form::text('name');
 // or
@@ -40,7 +38,6 @@ This will generate an `<input type="text">` field with the name `name`. You can 
 
 To generate a select dropdown field, you can use the `select` method:
 
-``
 ```php
 echo Form::select('country', $countries);
 // or
@@ -53,7 +50,6 @@ This will generate a `<select>` field with the name `country` and options popula
 
 To generate radio buttons, you can use the `radio` method:
 
-``
 ```php
 echo Form::radio('gender', 'male');
 echo Form::radio('gender', 'female');
@@ -68,7 +64,6 @@ This will generate radio buttons with the name `gender` and the corresponding va
 
 To add a submit button to the form, you can use the `submit` method:
 
-``
 ```php
 echo Form::submit('Submit');
 // or
@@ -81,7 +76,6 @@ This will generate a submit button with the specified label.
 
 To close the form, you can use the `close` method:
 
-``
 ```php
 echo Form::close();
 // or
@@ -98,7 +92,6 @@ Laravel provides a powerful form validation system to validate incoming form dat
 
 To validate form data in a controller, you can use the `validate` method:
 
-``
 ```php
 public function store(Request $request)
 {

@@ -12,19 +12,19 @@ To set up Active Storage, follow these steps:
 
    ```ruby
    rails active_storage:install
-
+  ```
 2. Run the database migrations to create the necessary tables:
 
    ```ruby
    rails db:migrate
-
+  ```
 3. Add the following line to your model to enable file attachments:
 
    ```ruby
    class User < ApplicationRecord
      has_one_attached :avatar
    end
-
+  ```
 ## 2. Uploading Files
 
 With Active Storage set up, you can now handle file uploads in your Rails application. Here's an example of how to upload a file using a form:
@@ -34,7 +34,7 @@ With Active Storage set up, you can now handle file uploads in your Rails applic
   <%= form.file_field :avatar %>
   <%= form.submit "Upload" %>
 <% end %>
-
+```
 In this example, the form includes a file field for selecting the file to upload. The `multipart: true` option is necessary for forms that handle file uploads.
 
 ## 3. Processing Uploaded Files
@@ -54,7 +54,7 @@ def create
     render :new
   end
 end
-
+```
 In this example, the uploaded file is attached to the `avatar` attribute of the `User` model using the `attach` method. If the user is saved successfully, you can perform the appropriate actions (e.g., redirecting to a show page). Otherwise, you can handle the errors accordingly.
 
 ## 4. Displaying Uploaded Files
@@ -63,7 +63,7 @@ To display an uploaded file in your views, you can use the `url_for` helper prov
 
 ```ruby
 <%= image_tag url_for(@user.avatar) if @user.avatar.attached? %>
-
+```
 This code checks if the user has an attached avatar and then uses the `image_tag` helper to generate the appropriate HTML tag for displaying the image.
 
 ## 5. Deleting Uploaded Files
@@ -77,7 +77,7 @@ def destroy
 
   # Handle the rest of the delete action
 end
-
+```
 In this example, the `purge` method removes the attached file from storage. You can then handle the rest of the delete action as needed.
 
 ## Conclusion

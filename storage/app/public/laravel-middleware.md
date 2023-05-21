@@ -21,7 +21,7 @@ You can apply middleware to routes or groups of routes using the `middleware` me
 
 In addition to the built-in middleware, Laravel allows you to create your own custom middleware to handle specific tasks. Custom middleware can be created using the `make:middleware` Artisan command. For example, to create a `TrimStrings` middleware, you can run:
 
-``
+
 ```php
 php artisan make:middleware TrimStrings
 ```
@@ -34,7 +34,7 @@ To use the custom middleware, you need to register it in the `app/Http/Kernel.ph
 
 Middleware can also accept additional parameters if needed. To pass parameters to middleware, you can separate them by a colon in the middleware definition. For example:
 
-``
+
 ```php
 Route::get('/admin', function () {
     // Route callback logic here

@@ -9,7 +9,7 @@ To define a trait in PHP, you use the `trait` keyword followed by the name of th
 Here's an example of defining a trait in PHP:
 
 `````````
-php
+<?php>
 trait Loggable {
     public function log($message) {
         echo 'Logging: ' . $message;
@@ -26,7 +26,7 @@ To use a trait in a class, you use the `use` keyword followed by the name of the
 Here's an example of a class using the `Loggable` trait:
 
 `````````
-php
+<?php>
 class User {
     use Loggable;
 
@@ -46,7 +46,7 @@ In some cases, if a class uses multiple traits and those traits have methods wit
 Here's an example that demonstrates conflict resolution:
 
 `````````
-php
+<?php>
 trait TraitA {
     public function foo() {
         echo 'TraitA';

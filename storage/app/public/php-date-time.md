@@ -7,7 +7,7 @@ Working with dates and times is a common task in PHP applications. PHP provides 
 To get the current date and time, you can use the `date()` function with the desired format:
 
 `````````
-php
+<?php>
 $currentDate = date("Y-m-d");
 $currentDateTime = date("Y-m-d H:i:s");
 `````````
@@ -24,7 +24,7 @@ $currentDateTime = date("Y-m-d H:i:s");
 PHP provides the `date()` function and the `DateTime` class to format dates and times. Here's an example of formatting a specific date using `date()`:
 
 `````````
-php
+<?php>
 $date = "2023-05-12";
 $formattedDate = date("F j, Y", strtotime($date));
 echo $formattedDate; // Output: May 12, 2023
@@ -33,7 +33,7 @@ echo $formattedDate; // Output: May 12, 2023
 To format dates using the `DateTime` class, you can do the following:
 
 `````````
-php
+<?php>
 $date = new DateTime("2023-05-12");
 $formattedDate = $date->format("F j, Y");
 echo $formattedDate; // Output: May 12, 2023
@@ -48,7 +48,7 @@ PHP offers various functions and methods to manipulate dates and times. You can 
 Using the `strtotime()` function, you can add or subtract intervals from a given date:
 
 `````````
-php
+<?php>
 $futureDate = date("Y-m-d", strtotime("+1 week"));
 $pastDate = date("Y-m-d", strtotime("-1 day"));
 `````````
@@ -58,7 +58,7 @@ $pastDate = date("Y-m-d", strtotime("-1 day"));
 To compare dates, you can use comparison operators like `<`, `>`, `<=`, and `>=`. You can also use the `strtotime()` function to convert dates to Unix timestamps for comparison:
 
 `````````
-php
+<?php>
 $date1 = strtotime("2023-05-12");
 $date2 = strtotime("2023-05-15");
 
@@ -76,7 +76,7 @@ if ($date1 < $date2) {
 To extract specific components from a date, you can use functions like `date()`, `getdate()`, and methods of the `DateTime` class. Here's an example:
 
 `````````
-php
+<?php>
 $date = "2023-05-12";
 $year = date("Y", strtotime($date));
 $month = date("m", strtotime($date));

@@ -6,7 +6,8 @@ Exceptions in PHP provide a way to handle errors and exceptional situations that
 
 To throw an exception in PHP, you can use the `throw` keyword followed by an instance of the `Exception` class or one of its subclasses. Here's an example:
 
-``````php
+``````
+<?php>
 throw new Exception("An error occurred");
 ``````
 
@@ -16,7 +17,8 @@ You can also create custom exception classes by extending the `Exception` class.
 
 To catch an exception and handle it gracefully, you can use the `try-catch` block. The `try` block contains the code that may throw an exception, and the `catch` block handles the exception. Here's an example:
 
-``````php
+``````
+<?php>
 try {
     // Code that may throw an exception
 } catch (Exception $e) {

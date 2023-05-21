@@ -9,7 +9,7 @@ To declare a variable in PHP, you use the `$` symbol followed by the variable na
 Here's an example of declaring variables in PHP:
 
 `````````
-php
+<?php>
 $name = "John";
 $age = 25;
 $price = 10.99;
@@ -36,7 +36,7 @@ You can assign values to variables using the assignment operator `=`. PHP automa
 Here's an example of assigning values to variables:
 
 `````````
-php
+<?php>
 $name = "John";
 $age = 25;
 `````````
@@ -50,7 +50,7 @@ Once a variable is declared and assigned a value, you can use it throughout your
 Here's an example that demonstrates variable usage:
 
 `````````
-php
+<?php>
 $name = "John";
 $age = 25;
 
@@ -69,7 +69,7 @@ Variable scope refers to the visibility and accessibility of variables within di
 Here's an example that demonstrates variable scope:
 
 `````````
-php
+<?php>
 $name = "John"; // Global variable
 
 function greet() {

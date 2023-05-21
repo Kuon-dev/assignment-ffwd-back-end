@@ -97,6 +97,4 @@ button.gradient {
 
 In this example, we use the `linear-gradient()` function to create a gradient background. Adjust the gradient colors and direction to achieve the desired effect.
 
-## Button States and Transitions
 
-CSS allows you to style buttons based on their states, such as when they are clicked or disabled. You can also apply transitions to create smooth animations. Here

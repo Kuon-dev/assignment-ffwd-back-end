@@ -7,7 +7,7 @@ In PHP, numbers are used to represent numeric data such as integers, floats, and
 Integer numbers are whole numbers without a decimal point. They can be positive or negative. Here's an example of defining an integer variable:
 
 `````````
-php
+<?php>
 $age = 25;
 `````````
 
@@ -16,7 +16,7 @@ $age = 25;
 Floating-point numbers, also known as floats or doubles, are numbers with a decimal point. They can also be positive or negative. Here's an example of defining a float variable:
 
 `````````
-php
+<?php>
 $price = 19.99;
 `````````
 
@@ -34,7 +34,7 @@ PHP supports arithmetic operations on numbers. Here are some common arithmetic o
 Example:
 
 `````````
-php
+<?php>
 $a = 10;
 $b = 5;
 $sum = $a + $b;
@@ -61,7 +61,7 @@ PHP provides a range of built-in functions for working with numbers. Here are so
 Here's an example that demonstrates the usage of these functions:
 
 `````````
-php
+<?php>
 $number = -4.75;
 $absolute = abs($number);
 $squareRoot = sqrt($number);
@@ -76,7 +76,7 @@ $random = rand(1, 10);
 In PHP, you can convert a value from one type to another using type casting. To cast a variable to a specific type, you can use the type name as a function. Here are some examples:
 
 `````````
-php
+<?php>
 $number = 42;
 $floatNumber = (float) $number;
 $stringNumber = (string) $number;

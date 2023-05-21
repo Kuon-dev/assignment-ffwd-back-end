@@ -6,7 +6,6 @@ In Laravel, requests are used to handle and validate incoming HTTP requests. Req
 
 To create a new request class, you can use the `make:request` Artisan command:
 
-``
 ```php
 php artisan make:request CreateUserRequest
 ```
@@ -19,7 +18,6 @@ Within the request file, you can define validation rules for the incoming reques
 
 For example, let's define a `CreateUserRequest` with validation rules for creating a new user:
 
-``
 ```php
 namespace App`Http`Requests;
 
@@ -46,7 +44,6 @@ You can access the request data within your controller or other parts of your ap
 
 For example, let's modify a controller method to accept the `CreateUserRequest`:
 
-``
 ```php
 use App`Http`Requests`CreateUserRequest;
 
@@ -69,7 +66,6 @@ Laravel automatically handles request validation and redirects back with error m
 
 For example, let's customize the error messages for the `CreateUserRequest`:
 
-``
 ```php
 public function messages()
 {

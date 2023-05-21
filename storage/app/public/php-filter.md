@@ -6,8 +6,8 @@ File filtering allows you to restrict the types of files that can be uploaded or
 
 To restrict the types of files that can be uploaded or accessed, you can check the file extension or MIME type. PHP provides several functions and techniques to perform file type checks. Here's an example that demonstrates file type restriction using the file extension:
 
-``````php
-<?php
+``````<?php>>
+<?php>
 // Define allowed file extensions
 $allowedExtensions = ['jpg', 'png', 'gif'];
 
@@ -29,8 +29,8 @@ In this example, we define an array of allowed file extensions (`$allowedExtensi
 
 File extensions can be manipulated, so it's recommended to validate file types based on their MIME types in addition to file extensions. PHP provides the `finfo` extension to determine the MIME type of a file. Here's an example:
 
-``````php
-<?php
+``````<?php>>
+<?php>
 // Create a Fileinfo object
 $fileInfo = finfo_open(FILEINFO_MIME_TYPE);
 

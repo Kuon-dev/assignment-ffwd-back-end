@@ -18,7 +18,7 @@ file = open("filename.txt", "a")
 
 # Closing the file
 file.close()
-
+```
 It's important to close the file using the `close()` method after you're done with it to free up system resources.
 
 ## Reading from a File
@@ -38,7 +38,7 @@ lines = file.readlines()
 for line in lines:
     print(line)
 file.close()
-
+```
 ## Writing to a File
 
 To write to a file, you can use the `write()` method of the file object. It allows you to write a string to the file. If the file doesn't exist, it will be created. If it already exists, the existing contents will be overwritten. Here's an example:
@@ -48,7 +48,7 @@ To write to a file, you can use the `write()` method of the file object. It allo
 file = open("filename.txt", "w")
 file.write("Hello, World!")
 file.close()
-
+```
 ## Appending to a File
 
 If you want to add content to an existing file without overwriting the existing contents, you can open the file in append mode using the `"a"` parameter. Here's an example:
@@ -58,7 +58,7 @@ If you want to add content to an existing file without overwriting the existing 
 file = open("filename.txt", "a")
 file.write("Hello, again!")
 file.close()
-
+```
 ## File Handling Best Practices
 
 When working with files, it's a good practice to use the `with` statement. It automatically takes care of opening and closing the file, even if an exception occurs. Here's an example:
@@ -68,7 +68,7 @@ When working with files, it's a good practice to use the `with` statement. It au
 with open("filename.txt", "r") as file:
     content = file.read()
     print(content)
-
+```
 The `with` statement ensures that the file is properly closed, even if an exception occurs within the block.
 
 Python provides many more file-related functions and methods, such as renaming files, deleting files, checking file existence, etc. It's a versatile language for working with files in various ways.

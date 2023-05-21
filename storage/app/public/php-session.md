@@ -6,8 +6,8 @@ Sessions provide a way to store information about a user across multiple request
 
 Before you can use sessions in PHP, you need to start a session using the `session_start()` function. This function initializes the session and creates a session ID if one doesn't exist. Here's an example:
 
-``````php
-<?php
+``````<?php>>
+<?php>
 // Start a session
 session_start();
 echo "Session has been started.";
@@ -20,8 +20,8 @@ In this example, we use the `session_start()` function to start a session. Once 
 
 To store data in a session, you can use session variables. Session variables are similar to regular variables, but they are associated with the user's session and can be accessed across multiple pages. Here's an example:
 
-``````php
-<?php
+``````<?php>>
+<?php>
 // Store a value in a session variable
 $_SESSION["username"] = "John";
 echo "Data has been stored in the session.";
@@ -34,8 +34,8 @@ In this example, we use the `$_SESSION` superglobal array to store the value "Jo
 
 To retrieve data from a session, you can simply access the session variable using the `$_SESSION` superglobal array. Here's an example:
 
-``````php
-<?php
+``````<?php>>
+<?php>
 // Retrieve the value from the session variable
 $username = $_SESSION["username"];
 echo "Welcome back, $username!";
@@ -48,8 +48,8 @@ In this example, we retrieve the value from the session variable "username" and 
 
 To destroy a session and clear all session data, you can use the `session_destroy()` function. This function removes all session variables and destroys the session ID. Here's an example:
 
-``````php
-<?php
+``````<?php>>
+<?php>
 // Destroy the session
 session_destroy();
 echo "Session has been destroyed.";

@@ -5,7 +5,7 @@ In PHP, a destructor is a special method within a class that is automatically ca
 To create a destructor in PHP, you use the `__destruct()` method. Here's the basic syntax:
 
 `````````
-php
+<?php>
 class ClassName {
     public function __destruct() {
         // Destructor logic here
@@ -18,7 +18,7 @@ class ClassName {
 Inside the destructor, you can perform any cleanup tasks, such as closing open files, releasing database connections, or freeing up any resources that were allocated during the object's lifetime.
 
 `````````
-php
+<?php>
 class File {
     private $handle;
 
@@ -39,7 +39,7 @@ In the above example, we have a class named `File` with a private property `$han
 The destructor is automatically invoked when the object is destroyed or goes out of scope. PHP handles this automatically when the object is no longer referenced or when the script finishes execution. You don't need to explicitly call the destructor.
 
 `````````
-php
+<?php>
 $file = new File('example.txt'); // Create an object
 // Object is used...
 // Object goes out of scope or is no longer referenced

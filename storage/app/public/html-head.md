@@ -15,17 +15,17 @@ One of the main purposes of the `<head>` element is to include metadata that des
 Here's an example of a basic HTML document structure with the `<head>` element:
 
 ```
-```<html>
-  ```<head>
-    ```<title>My Web Page</title>
-    ```<meta charset="utf-8">
-    ```<link rel="stylesheet" href="styles.css">
-    ```<script src="script.js"></script>
-  ```</head>
-  ```<body>
+<html>
+  <head>
+    <title>My Web Page</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
     <!-- Content of the web page goes here -->
-  ```</body>
-``</html>
+  </body>
+</html>
 ```
 
 In this example, the `<title>` tag sets the title of the web page, the `<meta>` tag specifies the character encoding, the `<link>` tag links an external CSS file, and the `<script>` tag links an external JavaScript file.

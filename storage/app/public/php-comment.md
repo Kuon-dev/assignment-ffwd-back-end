@@ -6,14 +6,14 @@ There are two types of comments in PHP:
 
 1. Single-line comments: These comments are used to add notes on a single line. Anything after the comment symbol `//` or `#` on the same line is considered a comment.
 
-   `````````php
+   `````````<?php>
    // This is a single-line comment in PHP
    # This is also a single-line comment in PHP
    `````````
 
 2. Multi-line comments: These comments span multiple lines and are enclosed between `/*` and `*/`. Multi-line comments are useful for adding longer explanations or disabling blocks of code.
 
-   `````````php
+   `````````<?php>
    /*
    This is a
    multi-line comment

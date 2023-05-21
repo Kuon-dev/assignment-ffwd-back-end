@@ -10,9 +10,9 @@ To add a class to an HTML element, you can use the `class` attribute. The value 
 Here's an example of adding a class to a `<div>` element:
 
 ```
-```<div class="my-class">
+<div class="my-class">
   This is a div element with the "my-class" class.
-```</div>
+</div>
 ```
 
 In this example, the element `<div class="my-class">` has been assigned the class name "my-class". You can choose any meaningful name for your class.
@@ -24,7 +24,7 @@ Once you have assigned a class to an element, you can style it using CSS. To tar
 Here's an example of styling an element with a class:
 
 ```
-```.my-class {
+.my-class {
   color: blue;
   font-size: 16px;
 }
@@ -39,9 +39,9 @@ HTML allows you to assign multiple classes to a single element. This can be help
 To assign multiple classes to an element, simply include all the class names in the `class` attribute separated by spaces. Here's an example:
 
 ```
-```<div class="class1 class2 class3">
+<div class="class1 class2 class3">
   This div element has multiple classes assigned to it.
-```</div>
+</div>
 ```
 
 In this example, the `<div>` element has three classes assigned to it: "class1", "class2", and "class3". You can apply specific styles to each class or target them using CSS selectors.

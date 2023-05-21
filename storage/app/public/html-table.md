@@ -10,16 +10,16 @@ To create a basic table, you need to use the `<table>`, `<tr>`, and `<td>` eleme
 Here's an example of a basic table with two rows and two columns:
 
 ```
-```<table>
-```<tr>
-```<td>Row 1, Column 1</td>
-```<td>Row 1, Column 2</td>
-```</tr>
-```<tr>
-```<td>Row 2, Column 1</td>
-```<td>Row 2, Column 2</td>
-```</tr>
-```</table>
+<table>
+<tr>
+<td>Row 1, Column 1</td>
+<td>Row 1, Column 2</td>
+</tr>
+<tr>
+<td>Row 2, Column 1</td>
+<td>Row 2, Column 2</td>
+</tr>
+</table>
 ```
 
 In the example above, we have a table with two rows and two columns. The content of each cell is defined using the `<td>` element.
@@ -31,16 +31,16 @@ Tables often include headers to provide labels for columns or rows. HTML provide
 Here's an example of a table with headers:
 
 ```
-```<table>
-```<tr>
-```<th>Header 1</th>
-```<th>Header 2</th>
-```</tr>
-```<tr>
-```<td>Data 1</td>
-```<td>Data 2</td>
-```</tr>
-```</table>
+<table>
+<tr>
+<th>Header 1</th>
+<th>Header 2</th>
+</tr>
+<tr>
+<td>Data 1</td>
+<td>Data 2</td>
+</tr>
+</table>
 ```
 
 In this example, the first row contains `<th>` elements, which represent the table headers. The second row contains regular `<td>` elements for the data cells.

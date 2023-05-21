@@ -7,7 +7,7 @@ In PHP, constants are like variables, but their values cannot be changed once th
 In PHP, constants are defined using the `define()` function or the `const` keyword. Here's an example of defining a constant using the `define()` function:
 
 `````````
-php
+<?php>
 define('PI', 3.14159);
 `````````
 
@@ -16,7 +16,7 @@ In this example, we define a constant named `PI` and assign it the value `3.1415
 Alternatively, you can define constants using the `const` keyword:
 
 `````````
-php
+<?php>
 const WEBSITE_NAME = 'My Website';
 `````````
 
@@ -27,7 +27,7 @@ In this example, we define a constant named `WEBSITE_NAME` with the value `'My W
 To access the value of a constant, you simply use its name. Here's an example:
 
 `````````
-php
+<?php>
 echo PI;              // Output: 3.14159
 echo WEBSITE_NAME;   // Output: My Website
 `````````
@@ -39,7 +39,7 @@ In this example, we use the `echo` statement to output the values of the `PI` an
 When naming constants, it is common practice to use uppercase letters and underscores to separate words. This convention improves readability and distinguishes constants from variables. Here's an example:
 
 `````````
-php
+<?php>
 define('MAX_SIZE', 100);
 `````````
 
@@ -59,7 +59,7 @@ PHP also provides a set of predefined constants called "magic constants" that ar
 Here's an example that demonstrates the usage of magic constants:
 
 `````````
-php
+<?php>
 echo __LINE__;       // Output: Line number of the code
 echo __FILE__;       // Output: Full path and filename of the script
 echo __DIR__;        // Output: Directory of the script

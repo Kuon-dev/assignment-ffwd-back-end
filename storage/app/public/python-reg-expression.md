@@ -10,7 +10,7 @@ To work with regular expressions in Python, you need to define a pattern using s
 import re
 
 pattern = r"ab+c"
-
+```
 In this example, we import the `re` module and define a pattern `ab+c`. The `r` prefix before the pattern string denotes a raw string, which is recommended when working with regular expressions.
 
 ## Matching Patterns
@@ -28,7 +28,7 @@ if match:
     print("Match found!")
 else:
     print("No match.")
-
+```
 In this example, the pattern `ab+c` is matched against the string `abc`, and since the pattern is found at the beginning of the string, a match is found.
 
 ## Searching for Patterns
@@ -46,7 +46,7 @@ if match:
     print("Match found!")
 else:
     print("No match.")
-
+```
 In this example, the pattern `ab+c` is searched within the string `def abbc ghi`, and since the pattern is found, a match is found.
 
 ## Extracting Matches
@@ -67,7 +67,7 @@ if match:
     print("Captured Group:", captured_group)
 else:
     print("No match.")
-
+```
 In this example, the pattern `ab(.+)c` is used to match the string `def ab123c ghi`. The `group(0)` method returns the entire matched text, while `group(1)` returns the content captured by the parentheses.
 
 ## Pattern Modifiers and Flags
@@ -85,7 +85,7 @@ if match:
     print("Match found!")
 else:
     print("No match.")
-
+```
 In this example, the pattern `python` is matched against the string `Python is awesome!` using the `re.IGNORECASE` flag. Since the flag is specified, case-insensitive matching is performed, and a match is found.
 
 ## Conclusion

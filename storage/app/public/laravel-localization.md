@@ -16,7 +16,6 @@ Inside the language directory, create a PHP file with a `.php` extension. This f
 
 Here's an example of a language file:
 
-``
 ```php
 // resources/lang/en/messages.php
 
@@ -34,7 +33,6 @@ To translate text in your application, you can use the `trans` helper function o
 
 Here's an example of translating text:
 
-``
 ```php
 echo trans('messages.welcome');
 // or
@@ -45,7 +43,6 @@ The output will be the translated text from the language file. If the translatio
 
 You can also pass additional parameters to the translation function for dynamic values:
 
-``
 ```php
 echo trans('messages.greeting', ['name' => 'John']);
 // or
@@ -60,14 +57,12 @@ Laravel provides Blade directives for conditional display based on the current l
 
 The `@lang` directive is used to display translated strings:
 
-``
 ``{{-- Blade template --}}
 @lang('messages.welcome')
 ``
 
 The `@choice` directive is used for pluralization:
 
-``
 ``{{-- Blade template --}}
 @choice('messages.apples', $count)
 ``
@@ -80,7 +75,6 @@ Laravel provides a `locale` middleware that allows you to change the application
 
 To change the locale for a specific route or group of routes, you can apply the `locale` middleware:
 
-``
 ```php
 Route::group(['middleware' => 'locale:es'], function () {
     // Routes that should use the 'es' locale

@@ -32,7 +32,7 @@ Within a layout file, you can use the `<%= yield %>` tag to define the content a
   </footer>
 </body>
 </html>
-
+```
 In this example, the `<%= yield %>` tag indicates the position where the content of each specific view will be rendered. The stylesheets and JavaScript files are included using the `stylesheet_link_tag` and `javascript_include_tag` helper methods, respectively.
 
 ## Using Different Layouts
@@ -48,7 +48,7 @@ class PostsController < ApplicationController
     # Controller action logic
   end
 end
-
+```
 In this example, the `PostsController` specifies the `custom_layout` as the layout to be used for all actions within the controller. You can create `custom_layout.html.erb` in the `app/views/layouts` directory and define its structure and content.
 
 ## Conditional Layouts
@@ -74,7 +74,7 @@ class PostsController < ApplicationController
     end
   end
 end
-
+```
 In this example, the `select_layout` method returns the layout to be used based on a condition. You can define your own logic to determine which layout to use.
 
 ## Conclusion

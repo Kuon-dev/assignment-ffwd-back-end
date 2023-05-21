@@ -10,11 +10,11 @@ Ordered lists are used to represent a list of items in a specific order. Each it
 Here's an example of an ordered list:
 
 ```
-```<ol>
-```<li>Item 1</li>
-```<li>Item 2</li>
-```<li>Item 3</li>
-```</ol>
+<ol>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ol>
 ```
 
 The output will be:
@@ -32,11 +32,11 @@ Unordered lists are used to represent a list of items without any specific order
 Here's an example of an unordered list:
 
 ```
-```<ul>
-```<li>Item 1</li>
-```<li>Item 2</li>
-```<li>Item 3</li>
-```</ul>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+<li>Item 3</li>
+</ul>
 ```
 
 The output will be:
@@ -54,12 +54,12 @@ Definition lists are used to present a list of terms and their corresponding def
 Here's an example of a definition list:
 
 ```
-```<dl>
-```<dt>Term 1</dt>
-```<dd>Definition 1</dd>
-```<dt>Term 2</dt>
-```<dd>Definition 2</dd>
-```</dl>
+<dl>
+<dt>Term 1</dt>
+<dd>Definition 1</dd>
+<dt>Term 2</dt>
+<dd>Definition 2</dd>
+</dl>
 ```
 
 The output will be:
@@ -77,16 +77,16 @@ You can also nest lists within other lists to create a hierarchical structure. S
 Here's an example of a nested list:
 
 ```
-```<ul>
-```<li>Item 1</li>
-```<li>
-```<ul>
-```<li>Subitem 1</li>
-```<li>Subitem 2</li>
-```</ul>
-\\</li>
-```<li>Item 2</li>
-```</ul>
+<ul>
+<li>Item 1</li>
+<li>
+<ul>
+<li>Subitem 1</li>
+<li>Subitem 2</li>
+</ul>
+</li>
+<li>Item 2</li>
+</ul>
 ```
 
 The output will be:

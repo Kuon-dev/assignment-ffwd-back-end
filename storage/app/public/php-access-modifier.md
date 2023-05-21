@@ -13,7 +13,7 @@ There are three main access modifiers in PHP:
 Here's an example that demonstrates the use of these access modifiers:
 
 `````````
-php
+<?php>
 class MyClass {
     public $publicProperty = 'Public Property';
     protected $protectedProperty = 'Protected Property';
@@ -38,7 +38,7 @@ In the above example, the class `MyClass` has properties and methods defined wit
 To access these members, you create an instance of the class and use the object operator (`->`) to access them:
 
 `````````
-php
+<?php>
 $obj = new MyClass();
 
 echo $obj->publicProperty; // Output: Public Property

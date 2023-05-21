@@ -7,7 +7,7 @@ Images play a crucial role in web design, allowing you to incorporate visual ele
 To insert an image, you need to specify the source URL of the image using the `src` attribute within the `<img>` element. Here's an example:
 
 ```
-```<img src="image.jpg" alt="Description of the image">
+<img src="image.jpg" alt="Description of the image">
 ```
 
 In the example above, the image file "image.jpg" is referenced by the `src` attribute. The `alt` attribute provides alternative text that is displayed if the image fails to load or for accessibility purposes. Make sure to replace "image.jpg" with the actual filename and extension of your image.
@@ -24,7 +24,7 @@ The `<img>` element supports several attributes that can enhance the appearance 
 Here's an example that demonstrates the usage of these attributes:
 
 ```
-```<img src="image.jpg" alt="Description of the image" width="300" height="200" title="Image caption" class="image-class" id="image-id">
+<img src="image.jpg" alt="Description of the image" width="300" height="200" title="Image caption" class="image-class" id="image-id">
 ```
 
 ## Image Formats and Optimization

@@ -8,8 +8,8 @@ The `auto` storage class is the default storage class for local variables declar
 
 Here's an example that demonstrates the use of the `auto` storage class:
 
-``cpp
-``#include <iostream>
+```cpp
+#include <iostream>
 
 int main() {
     auto x = 10;  // auto keyword deduces the type as int
@@ -20,7 +20,7 @@ int main() {
 
     return 0;
 }
-
+```
 In this example, the variables `x` and `name` are declared with the `auto` keyword. The compiler automatically deduces their types based on the assigned values.
 
 ## Static Storage Class
@@ -29,8 +29,8 @@ The `static` storage class is used to declare variables that retain their values
 
 Here's an example that demonstrates the use of the `static` storage class:
 
-``cpp
-``#include <iostream>
+```cpp
+#include <iostream>
 
 void increment() {
     static int counter = 0;
@@ -45,7 +45,7 @@ int main() {
 
     return 0;
 }
-
+```
 In this example, the variable `counter` is declared as `static` inside the `increment` function. Each time the `increment` function is called, the value of `counter` is retained and incremented.
 
 ## External Storage Class
@@ -54,9 +54,9 @@ The `extern` storage class is used to declare variables that are defined in othe
 
 Here's an example that demonstrates the use of the `extern` storage class:
 
-``cpp
-``// File1.cpp
-``#include <iostream>
+```cpp
+// File1.cpp
+#include <iostream>
 
 extern int sharedVariable;
 
@@ -65,9 +65,9 @@ int main() {
     return 0;
 }
 
-``// File2.cpp
-``int sharedVariable = 10;
-
+// File2.cpp
+int sharedVariable = 10;
+```
 In this example, the variable `sharedVariable` is defined in `File2.cpp` and declared as `extern` in `File1.cpp`. The `extern` keyword informs the compiler that the variable is defined elsewhere.
 
 ## Register Storage Class

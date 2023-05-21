@@ -49,7 +49,7 @@ To display the value of a variable, you can use the `print()` function. It takes
 # Printing the value of a variable
 message = "Hello, World!"
 print(message)
-
+```
 In the above code, the value of the variable `message` is printed to the console.
 
 ## Conclusion

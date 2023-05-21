@@ -6,7 +6,8 @@ Uploading files in PHP allows users to submit files from their local machines to
 
 To enable file uploads, you need to create an HTML form with an input element of type "file". This form will allow users to select and submit files from their devices.
 
-``````html
+``````
+html
 <form action="upload.php" method="post" enctype="multipart/form-data">
   <input type="file" name="fileToUpload">
   <input type="submit" value="Upload">
@@ -24,8 +25,8 @@ In this example, we create an HTML form with the following attributes:
 
 After the user submits the form, you need to handle the file upload in a PHP script. Here's an example of how to handle file upload in PHP:
 
-``````php
-<?php
+``````
+<?php>
 $targetDir = "uploads/";
 $targetFile = $targetDir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
