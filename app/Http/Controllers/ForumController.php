@@ -55,6 +55,46 @@ class ForumController extends Controller {
     return response()->json([["paginationCount" => $paginationCount]]);
   }
 
+  // search forum based on query
+  public function search(Request $request) {
+    $query = $request->query('q');
+
+    // Perform the search based on the query
+    $forums = Forum::where('title', 'like', '%' . $query . '%')
+    ->orWhere('content', 'like', '%' . $query . '%')
+    ->get();
+
+    $userNames = [];
+    $upVotes = [];
+    $downVotes = [];
+
+    foreach ($forums as $forum) {
+      $user = User::find($forum->user_id);
+      if ($user) {
+        $userNames[] = $user->name;
+      }
+
+      $upVote = Vote::where("forum_id", $forum->id)
+        ->where("is_upvote", "=", 1)
+        ->count();
+
+      $downVote = Vote::where("forum_id", $forum->id)
+        ->where("is_upvote", "=", 0)
+        ->count();
+
+      $upVotes[] = $upVote;
+      $downVotes[] = $downVote;
+    }
+
+    // Return the search results as JSON response
+    return response()->json([
+      "data" => $forums,
+      "users" => $userNames,
+      "upVotes" => $upVotes,
+      "downVotes" => $downVotes,
+    ]);
+  }
+
   // get specific forum post with comments
   public function show(Request $request) {
     $forum = Forum::where("id", $request->forum_id)->get();
@@ -90,7 +130,6 @@ class ForumController extends Controller {
       ->get();
 
     if ($hotTodayForums->isEmpty()) {
-      Log::debug("is empty array");
       $hotForums = Forum::where("is_deleted_by_user", 0)
         ->where("is_removed_by_admin", 0)
         ->withCount([
