@@ -38,24 +38,22 @@ class FeedbackController extends Controller {
     ]);
   }
 
-  public function store(Request $request): Response {
+  public function store(Request $request) {
     // Create and Store new feedback
     $request->validate([
       "message" => ["nullable", "string", "max:1000"],
     ]);
 
     //$currentUser = ;
-    $quiz = Quiz::latest()->first();
+    //$quiz = Quiz::latest()->first();
     $feedback = Feedback::create([
-      "quiz_id" => $quiz->id,
+      "quiz_id" => $request->quiz,
       "user_id" => $request->user,
       "message" => $request->feedback,
       "rating" => $request->rating,
     ]);
 
-    // event(new Registered($user));
-
-    return response()->noContent();
+    return response()->json(["message" => "Feedback has been created."], 200);
   }
 
   public function getFeedbacksFromUser($user_id) {
