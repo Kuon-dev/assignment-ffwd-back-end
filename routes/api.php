@@ -39,7 +39,7 @@ Route::get("/forums/pages/count", [ForumController::class, "paginationCount"]);
 // Forum Index Page
 Route::post("/forums/get/{id}", [ForumController::class, "index"]);
 // Search Forum
-Route::post("forums/search", [ForumController::class, "search"]);
+Route::post("/forums/search", [ForumController::class, "search"]);
 // Specific Forum Page
 Route::post("/forums/get/specific/{id}", [ForumController::class, "show"]);
 // Get all comments of specific forum
